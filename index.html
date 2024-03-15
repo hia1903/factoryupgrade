@@ -166,6 +166,16 @@
                 <td id="MVP">-</td>
                 <td id="XCP">-</td>
             </tr>
+    </table>    
+    <table bgcolor="black"
+        width="120">
+            <tr bgcolor="grey">
+                <th width="80">Total Xalium</th>
+            </tr>
+            <tr align="center"
+            bgcolor="lightgrey">
+                <td id="Xal">-</td>
+            </tr>
     </table>
 
     <hr>
@@ -174,13 +184,13 @@
 
     <script>
         var upgradeValueList = {
-            "b11Xal": 0, "b11HP":  30,                                 "b12Xal": 0, "b12DEF": 40, "b12TGH": 40,                   "b13Xal": 0, "b13FCd":  -50, "b13CAT": 40, "b13DMG": 20,    "b14Xal": 0, "b14DMG": 65, "b14ArP": 20,
-            "b21Xal": 0, "b21RoS": 10,                                 "b22Xal": 0, "b22DHP": 80, "b22DMG": 20,                   "b23Xal": 0, "b23ATT": 60,                                 "b24Xal": 0, "b24DMG": 65,
-            "b31Xal": 0, "b31CAT": 40, "b31DMG": 10,                   "b32Xal": 0, "b32ATT": 40, "b32DMG": 25,                   "b33Xal": 0, "b33XCP": -25, "b33MVP": -25, "b33AoE": 5,      "b34Xal": 0, "b34AoE": 5, "b34DMG":  50,
-            "b41Xal": 0, "b41Reg": 10, "b41HP":  15,                   "b42Xal": 0, "b42UCd": -10, "b42HP":  20,                   "b43Xal": 0, "b43RNG": 5,  "b43DMG": 10,                   "b44Xal": 0, "b44FwS": 10, "b44DMG": 30, "b44UCd": -10,
-            "b51Xal": 0, "b51MVP": -25, "b51DMG": 15,                   "b52Xal": 0, "b52HP":  15, "52ArP":  20,                   "b53Xal": 0, "b53JCd": -20, "b53DMG": 20,                   "b54Xal": 0, "b54DMG": 40, "b54CAT": 40,
-            "b61Xal": 0, "b61Reg": 10, "b61HP" : 15, "b61DMG": 10,     "b62Xal": 0, "b62Acl": 10, "b62HP":  15, "b62DMG": 10,     "b63Xal": 0, "b63RNG": 5,  "b63DMG": 10,                   "b64Xal": 0, "b64HP":  20, "b64DMG": 20, "b64DEF": 80,
-            "b71Xal": 0, "b71DMG": 15,                                 "b72Xal": 0, "b72CDF": 40, "b72HP":  15, "b72DMG": 15,     "b73Xal": 0, "b73XCP": -25, "b73DMG": 30,                   "b74Xal": 0, "b74HP":  30, "b74CDF": 80
+            "b11Xal": 1150, "b11HP":  30,                                  "b12Xal": 1300, "b12DEF": 40,  "b12TGH": 40,                   "b13Xal": 1850, "b13FCd": -50, "b13CAT": 40,  "b13DMG": 20,    "b14Xal": 4700, "b14DMG": 65, "b14ArP": 20,
+            "b21Xal": 850,  "b21RoS": 10,                                  "b22Xal": 1850, "b22DHP": 80,  "b22DMG": 20,                   "b23Xal": 1700, "b23ATT": 60,                                  "b24Xal": 4150, "b24DMG": 65,
+            "b31Xal": 850,  "b31CAT": 40,  "b31DMG": 10,                   "b32Xal": 1450, "b32ATT": 40,  "b32DMG": 25,                   "b33Xal": 2400, "b33XCP": -25, "b33MVP": -25, "b33AoE": 5,     "b34Xal": 3700, "b34AoE": 5, "b34DMG":  50,
+            "b41Xal": 750,  "b41Reg": 10,  "b41HP":  15,                   "b42Xal": 1000, "b42UCd": -10, "b42HP":  20,                   "b43Xal": 2200, "b43RNG": 5,   "b43DMG": 10,                   "b44Xal": 2300, "b44FwS": 10, "b44DMG": 30, "b44UCd": -10,
+            "b51Xal": 1000, "b51MVP": -25, "b51DMG": 15,                   "b52Xal": 1000, "b52HP":  15,  "52ArP":  20,                   "b53Xal": 1200, "b53JCd": -20, "b53DMG": 20,                   "b54Xal": 2450, "b54DMG": 40, "b54CAT": 40,
+            "b61Xal": 950,  "b61Reg": 10,  "b61HP" : 15, "b61DMG": 10,     "b62Xal": 1300, "b62Acl": 10,  "b62HP":  15, "b62DMG": 10,     "b63Xal": 1300, "b63RNG": 5,   "b63DMG": 10,                   "b64Xal": 2800, "b64HP":  20, "b64DMG": 20, "b64DEF": 80,
+            "b71Xal": 350,  "b71DMG": 15,                                  "b72Xal": 1450, "b72CDF": 40,  "b72HP":  15, "b72DMG": 15,     "b73Xal": 1750, "b73XCP": -25, "b73DMG": 30,                   "b74Xal": 2850, "b74HP":  30, "b74CDF": 80
         }
 
         var upgradeList = [
@@ -233,6 +243,7 @@
             "DMG":  0, "ATT":   0, "ArP":   0, "CAT":   0, "RNG":   0, "AoE": 0,
             "DHP":  0, "Reg":   0, "FCd":   0, "JCd":   0, "UCd":   0,
             "FwS":  0, "RoS":   0, "Acl":   0, "MVP":   0, "XCP":   0,
+            "Xal":  0,
         };
 
         var buttonStats = {
@@ -298,10 +309,11 @@
             }
 
             var filteredKeys = Object.keys(upgradeValueList).filter(function(key) {return key.startsWith("b" + btnNo); });
-            for (var i = 1; i < filteredKeys.length; i++)
+            for (var i = 0; i < filteredKeys.length; i++)
             {
                 var statKey = filteredKeys[i].toString();
                 AddStats(statKey.substring(3), upgradeValueList[statKey]);
+                
             }
 
             UpdateStats();
@@ -316,7 +328,7 @@
             buttonStats[btnNo] = false;
 
             var filteredKeys = Object.keys(upgradeValueList).filter(function(key) {return key.startsWith("b" + btnNo); });
-            for (var i = 1; i < filteredKeys.length; i++)
+            for (var i = 0; i < filteredKeys.length; i++)
             {
                 var statKey = filteredKeys[i].toString();
                 AddStats(statKey.substring(3), -upgradeValueList[statKey]);
@@ -330,13 +342,11 @@
                 var mbutton2 = document.getElementById(buttonId2);
                 mbutton2.style.backgroundColor = defaultColor;
 
-                console.log(btnNo2 + " : " + buttonStats[btnNo2.toString()]);
                 if (buttonStats[btnNo2.toString()] == true)
                 {
                     var filteredKeys = Object.keys(upgradeValueList).filter(function(key) {return key.startsWith("b" + btnNo2); });
-                    console.log(filteredKeys);
 
-                    for (var j = 1; j < filteredKeys.length; j++)
+                    for (var j = 0; j < filteredKeys.length; j++)
                     {
                         var statKey = filteredKeys[j].toString();
                         AddStats(statKey.substring(3), -upgradeValueList[statKey]);
