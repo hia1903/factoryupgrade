@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Factory Upgrade</title>
     <style>
+        .container {
+            display: contents; 
+            flex-wrap: wrap; 
+        }
+        div {
+            background-color: aliceblue;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+
+            width: calc(35% - 10px); 
+            margin-right: 2px; 
+            margin-bottom: 5px; 
+            padding: 1px; 
+        }
         button {
             text-align: center;
             font-size: x-small;
@@ -14,14 +29,10 @@
             padding: 5px;
             border: 2px solid black;
             background-color: #dcdcdc;
+
+            margin-right: 10px;
         }
 
-        div {
-            background-color: aliceblue;
-            display: flex;
-            align-items: center;
-            justify-content: left;
-        }
         table {
             font-size: small;
         }
@@ -31,6 +42,8 @@
 <body onload="onPageLoad()"> 
 
     <br><br><hr>
+    
+<div class="container">   
     <div>
         <Label style="width: 70px; padding: 5px;">Mechanic:</Label>
         <button onclick="OnClickButton11()" id="button11" title="1150Xal"></button>
@@ -38,8 +51,7 @@
         <button disabled onclick="OnClickButton13()" id="button13" title="1850Xal"></button>
         <button disabled onclick="OnClickButton14()" id="button14" title="4700Xal"></button>
     </div>
-    <br>
-
+    
     <div>
         <Label style="width: 70px; padding: 5px;">Engine:</Label>
         <button onclick="OnClickButton21()" id="button21" title="850Xal"></button>
@@ -47,7 +59,6 @@
         <button disabled onclick="OnClickButton23()" id="button23" title="1700Xal"></button>
         <button disabled onclick="OnClickButton24()" id="button24" title="4150Xal"></button>
     </div>
-    <br>
 
     <div>
         <Label style="width: 70px; padding: 5px;">Gun:</Label>
@@ -56,7 +67,6 @@
         <button disabled onclick="OnClickButton33()" id="button33" title="2400Xal"></button>
         <button disabled onclick="OnClickButton34()" id="button34" title="3700Xal"></button>
     </div>
-    <br>
 
     <div>
         <Label style="width: 70px; padding: 5px;">Ammo:</Label>
@@ -65,7 +75,6 @@
         <button disabled onclick="OnClickButton43()" id="button43" title="2200Xal"></button>
         <button disabled onclick="OnClickButton44()" id="button44" title="2300Xal"></button>
     </div>
-    <br>
     
     <div>
         <Label style="width: 70px; padding: 5px;">Geist:</Label>
@@ -74,7 +83,6 @@
         <button disabled onclick="OnClickButton53()" id="button53" title="1200Xal"></button>
         <button disabled onclick="OnClickButton54()" id="button54" title="2450Xal"></button>
     </div>
-    <br>
 
     <div>
         <Label style="width: 70px; padding: 5px;">Armor:</Label>
@@ -83,7 +91,6 @@
         <button disabled onclick="OnClickButton63()" id="button63" title="1300Xal"></button>
         <button disabled onclick="OnClickButton64()" id="button64" title="2800Xal"></button>
     </div>
-    <br>
 
     <div>
         <Label style="width: 70px; padding: 5px;">Hull:</Label>
@@ -92,7 +99,7 @@
         <button disabled onclick="OnClickButton73()" id="button73" title="1750Xal"></button>
         <button disabled onclick="OnClickButton74()" id="button74" title="2850Xal"></button>
     </div>
-    <br>
+</div>
     
     <hr>
     <table bgcolor="black"
