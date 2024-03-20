@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <title>Factory Upgrade</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factory Upgrade</title>
+
     <style>
         .container {
-            display: contents; 
+            display: contents;
             flex-wrap: wrap; 
         }
         div {
@@ -15,7 +17,7 @@
             align-items: center;
             justify-content: left;
 
-            width: calc(35% - 10px); 
+            width: fit-content; 
             margin-right: 2px; 
             margin-bottom: 5px; 
             padding: 1px; 
@@ -28,13 +30,18 @@
             margin: 2px;
             padding: 5px;
             border: 2px solid black;
-            background-color: #dcdcdc;
+            background-color: #f5f5f5;
 
             margin-right: 10px;
         }
 
+        .tableContainer {
+            display: contents; 
+            flex-wrap: wrap;
+        }
         table {
             font-size: small;
+            background-color: black;
         }
     </style>
 </head>
@@ -42,94 +49,94 @@
 <body onload="onPageLoad()"> 
 
     <br><br><hr>
-    
-<div class="container">   
+
+<div class="container">    
     <div>
         <Label style="width: 70px; padding: 5px;">Mechanic:</Label>
-        <button onclick="OnClickButton11()" id="button11" title="1150Xal"></button>
-        <button disabled onclick="OnClickButton12()" id="button12" title="1300Xal"></button>        
-        <button disabled onclick="OnClickButton13()" id="button13" title="1850Xal"></button>
-        <button disabled onclick="OnClickButton14()" id="button14" title="4700Xal"></button>
+        <button onclick="OnClickButton(11)" id="button11"></button>
+        <button disabled onclick="OnClickButton(12)" id="button12"></button>        
+        <button disabled onclick="OnClickButton(13)" id="button13"></button>
+        <button disabled onclick="OnClickButton(14)" id="button14"></button>
     </div>
-    
+
     <div>
         <Label style="width: 70px; padding: 5px;">Engine:</Label>
-        <button onclick="OnClickButton21()" id="button21" title="850Xal"></button>
-        <button disabled onclick="OnClickButton22()" id="button22" title="1850Xal"></button>        
-        <button disabled onclick="OnClickButton23()" id="button23" title="1700Xal"></button>
-        <button disabled onclick="OnClickButton24()" id="button24" title="4150Xal"></button>
+        <button onclick="OnClickButton(21)" id="button21"></button>
+        <button disabled onclick="OnClickButton(22)" id="button22"></button>        
+        <button disabled onclick="OnClickButton(23)" id="button23"></button>
+        <button disabled onclick="OnClickButton(24)" id="button24"></button>
     </div>
 
     <div>
         <Label style="width: 70px; padding: 5px;">Gun:</Label>
-        <button onclick="OnClickButton31()" id="button31" title="850Xal"></button>
-        <button disabled onclick="OnClickButton32()" id="button32" title="1450Xal"></button>        
-        <button disabled onclick="OnClickButton33()" id="button33" title="2400Xal"></button>
-        <button disabled onclick="OnClickButton34()" id="button34" title="3700Xal"></button>
+        <button onclick="OnClickButton(31)" id="button31"></button>
+        <button disabled onclick="OnClickButton(32)" id="button32"></button>        
+        <button disabled onclick="OnClickButton(33)" id="button33"></button>
+        <button disabled onclick="OnClickButton(34)" id="button34"></button>
     </div>
 
     <div>
         <Label style="width: 70px; padding: 5px;">Ammo:</Label>
-        <button onclick="OnClickButton41()" id="button41" title="750Xal"></button>
-        <button disabled onclick="OnClickButton42()" id="button42" title="1000Xal"></button>        
-        <button disabled onclick="OnClickButton43()" id="button43" title="2200Xal"></button>
-        <button disabled onclick="OnClickButton44()" id="button44" title="2300Xal"></button>
+        <button onclick="OnClickButton(41)" id="button41"></button>
+        <button disabled onclick="OnClickButton(42)" id="button42"></button>        
+        <button disabled onclick="OnClickButton(43)" id="button43"></button>
+        <button disabled onclick="OnClickButton(44)" id="button44"></button>
     </div>
     
     <div>
         <Label style="width: 70px; padding: 5px;">Geist:</Label>
-        <button onclick="OnClickButton51()" id="button51" title="1000Xal"></button>
-        <button disabled onclick="OnClickButton52()" id="button52" title="1000Xal"></button>        
-        <button disabled onclick="OnClickButton53()" id="button53" title="1200Xal"></button>
-        <button disabled onclick="OnClickButton54()" id="button54" title="2450Xal"></button>
+        <button onclick="OnClickButton(51)" id="button51"></button>
+        <button disabled onclick="OnClickButton(52)" id="button52"></button>        
+        <button disabled onclick="OnClickButton(53)" id="button53"></button>
+        <button disabled onclick="OnClickButton(54)" id="button54"></button>
     </div>
 
     <div>
         <Label style="width: 70px; padding: 5px;">Armor:</Label>
-        <button onclick="OnClickButton61()" id="button61" title="950Xal"></button>
-        <button disabled onclick="OnClickButton62()" id="button62" title="1300Xal"></button>        
-        <button disabled onclick="OnClickButton63()" id="button63" title="1300Xal"></button>
-        <button disabled onclick="OnClickButton64()" id="button64" title="2800Xal"></button>
+        <button onclick="OnClickButton(61)" id="button61"></button>
+        <button disabled onclick="OnClickButton(62)" id="button62"></button>        
+        <button disabled onclick="OnClickButton(63)" id="button63"></button>
+        <button disabled onclick="OnClickButton(64)" id="button64"></button>
     </div>
 
     <div>
         <Label style="width: 70px; padding: 5px;">Hull:</Label>
-        <button onclick="OnClickButton71()" id="button71" title="350Xal"></button>
-        <button disabled onclick="OnClickButton72()" id="button72" title="1450Xal"></button>        
-        <button disabled onclick="OnClickButton73()" id="button73" title="1750Xal"></button>
-        <button disabled onclick="OnClickButton74()" id="button74" title="2850Xal"></button>
+        <button onclick="OnClickButton(71)" id="button71"></button>
+        <button disabled onclick="OnClickButton(72)" id="button72"></button>        
+        <button disabled onclick="OnClickButton(73)" id="button73"></button>
+        <button disabled onclick="OnClickButton(74)" id="button74"></button>
     </div>
 </div>
-    
-    <hr>
-    <table bgcolor="black"
-        width="480">
-            <tr bgcolor="grey">
+
+<hr>
+
+<div class="tableContainer">
+    <table width="480">
+            <tr bgcolor="aliceblue">
                 <th width="80">HP</th>
                 <th width="80">TGH</th>
                 <th width="80">DEF</th>
                 <th width="80">CCDEF</th>
             </tr>
             <tr align="center"
-            bgcolor="lightgrey">
+            bgcolor="#f5f5f5">
                 <td id="HP">-</td>
                 <td id="TGH">-</td>
                 <td id="DEF">-</td>
                 <td id="CDF">-</td>
             </tr>
     </table>    
-    <table bgcolor="black"
-        width="720">
-            <tr bgcolor="grey">
+    <table width="720">
+            <tr bgcolor="aliceblue">
                 <th width="80">DMG</th>
                 <th width="80">ATT</th>
                 <th width="80">Armor Pen</th>
                 <th width="80">CCATT</th>
-                <th width="80">RNG</th>
+                <th width="80">RANGE</th>
                 <th width="80">AoE</th>
             </tr>
             <tr align="center"
-            bgcolor="lightgrey">
+            bgcolor="#f5f5f5">
                 <td id="DMG">-</td>
                 <td id="ATT">-</td>
                 <td id="ArP">-</td>
@@ -138,17 +145,16 @@
                 <td id="AoE">-</td>
             </tr>
     </table>    
-    <table bgcolor="black"
-        width="600">
-            <tr bgcolor="grey">
+    <table width="600">
+            <tr bgcolor="aliceblue">
                 <th width="80">Drone HP</th>
                 <th width="80">Regen</th>
-                <th width="80">Factory C.</th>
-                <th width="80">Jump Cooldown</th>
-                <th width="80">Ulti C.</th>
+                <th width="80">Factory Cd.</th>
+                <th width="80">Jump Cd.</th>
+                <th width="80">Ulti Cd.</th>
             </tr>
             <tr align="center"
-            bgcolor="lightgrey">
+            bgcolor="#f5f5f5">
                 <td id="DHP">-</td>
                 <td id="Reg">-</td>
                 <td id="FCd">-</td>
@@ -156,17 +162,16 @@
                 <td id="UCd">-</td>
             </tr>
     </table>    
-    <table bgcolor="black"
-        width="600">
-            <tr bgcolor="grey">
-                <th width="80">Fwd Spd</th>
+    <table width="600">
+            <tr bgcolor="aliceblue">
+                <th width="80">Fwd Speed</th>
                 <th width="80">Rot Speed</th>
                 <th width="80">Acceleration</th>
-                <th width="80">MVR Pen</th>
-                <th width="80">XCPEN</th>
+                <th width="80">MVR PEN</th>
+                <th width="80">XC PEN</th>
             </tr>
             <tr align="center"
-            bgcolor="lightgrey">
+            bgcolor="#f5f5f5">
                 <td id="FwS">-</td>
                 <td id="RoS">-</td>
                 <td id="Acl">-</td>
@@ -174,486 +179,215 @@
                 <td id="XCP">-</td>
             </tr>
     </table>    
-    <table bgcolor="black"
-        width="120">
-            <tr bgcolor="grey">
+    <table width="120">
+            <tr bgcolor="aliceblue">
                 <th width="80">Total Xalium</th>
             </tr>
             <tr align="center"
-            bgcolor="lightgrey">
+            bgcolor="#f5f5f5">
                 <td id="Xal">-</td>
             </tr>
     </table>
+</div>
 
     <hr>
-    <img src="./UpgradeExp.png" width="800px" alt="upgrades" title="upgrades">
+    <img src="./UpgradeExp.png" width="700px" alt="upgrades" title="upgrades">
     <hr>
 
-    <script>
-        var upgradeValueList = {
-            "b11Xal": 1150, "b11HP":  30,                                  "b12Xal": 1300, "b12DEF": 40,  "b12TGH": 40,                   "b13Xal": 1850, "b13FCd": -50, "b13CAT": 40,  "b13DMG": 20,    "b14Xal": 4700, "b14DMG": 65, "b14ArP": 20,
-            "b21Xal": 850,  "b21RoS": 10,                                  "b22Xal": 1850, "b22DHP": 80,  "b22DMG": 20,                   "b23Xal": 1700, "b23ATT": 60,                                  "b24Xal": 4150, "b24DMG": 65,
-            "b31Xal": 850,  "b31CAT": 40,  "b31DMG": 10,                   "b32Xal": 1450, "b32ATT": 40,  "b32DMG": 25,                   "b33Xal": 2400, "b33XCP": -25, "b33MVP": -25, "b33AoE": 5,     "b34Xal": 3700, "b34AoE": 5, "b34DMG":  50,
-            "b41Xal": 750,  "b41Reg": 10,  "b41HP":  15,                   "b42Xal": 1000, "b42UCd": -10, "b42HP":  20,                   "b43Xal": 2200, "b43RNG": 5,   "b43DMG": 10,                   "b44Xal": 2300, "b44FwS": 10, "b44DMG": 30, "b44UCd": -10,
-            "b51Xal": 1000, "b51MVP": -25, "b51DMG": 15,                   "b52Xal": 1000, "b52HP":  15,  "52ArP":  20,                   "b53Xal": 1200, "b53JCd": -20, "b53DMG": 20,                   "b54Xal": 2450, "b54DMG": 40, "b54CAT": 40,
-            "b61Xal": 950,  "b61Reg": 10,  "b61HP" : 15, "b61DMG": 10,     "b62Xal": 1300, "b62Acl": 10,  "b62HP":  15, "b62DMG": 10,     "b63Xal": 1300, "b63RNG": 5,   "b63DMG": 10,                   "b64Xal": 2800, "b64HP":  20, "b64DMG": 20, "b64DEF": 80,
-            "b71Xal": 350,  "b71DMG": 15,                                  "b72Xal": 1450, "b72CDF": 40,  "b72HP":  15, "b72DMG": 15,     "b73Xal": 1750, "b73XCP": -25, "b73DMG": 30,                   "b74Xal": 2850, "b74HP":  30, "b74CDF": 80
-        }
+<script>
+    var upgradeValueList = {
+        "b11Xal": 1150, "b11HP":  30,                                  "b12Xal": 1300, "b12DEF": 40,  "b12TGH": 40,                   "b13Xal": 1850, "b13FCd": -50, "b13CAT": 40,  "b13DMG": 20,    "b14Xal": 4700, "b14DMG": 65, "b14ArP": 20,
+        "b21Xal": 850,  "b21RoS": 10,                                  "b22Xal": 1850, "b22DHP": 80,  "b22DMG": 20,                   "b23Xal": 1700, "b23ATT": 60,                                  "b24Xal": 4150, "b24DMG": 65,
+        "b31Xal": 850,  "b31CAT": 40,  "b31DMG": 10,                   "b32Xal": 1450, "b32ATT": 40,  "b32DMG": 25,                   "b33Xal": 2400, "b33XCP": -25, "b33MVP": -25, "b33AoE": 5,     "b34Xal": 3700, "b34AoE": 5, "b34DMG":  50,
+        "b41Xal": 750,  "b41Reg": 10,  "b41HP":  15,                   "b42Xal": 1000, "b42UCd": -10, "b42HP":  20,                   "b43Xal": 2200, "b43RNG": 5,   "b43DMG": 10,                   "b44Xal": 2300, "b44FwS": 10, "b44DMG": 30, "b44UCd": -10,
+        "b51Xal": 1000, "b51MVP": -25, "b51DMG": 15,                   "b52Xal": 1000, "b52HP":  15,  "52ArP":  20,                   "b53Xal": 1200, "b53JCd": -20, "b53DMG": 20,                   "b54Xal": 2450, "b54DMG": 40, "b54CAT": 40,
+        "b61Xal": 950,  "b61Reg": 10,  "b61HP" : 15, "b61DMG": 10,     "b62Xal": 1300, "b62Acl": 10,  "b62HP":  15, "b62DMG": 10,     "b63Xal": 1300, "b63RNG": 5,   "b63DMG": 10,                   "b64Xal": 2800, "b64HP":  20, "b64DMG": 20, "b64DEF": 80,
+        "b71Xal": 350,  "b71DMG": 15,                                  "b72Xal": 1450, "b72CDF": 40,  "b72HP":  15, "b72DMG": 15,     "b73Xal": 1750, "b73XCP": -25, "b73DMG": 30,                   "b74Xal": 2850, "b74HP":  30, "b74CDF": 80
+    }
 
-        var upgradeList = [
-            [
-                "<b><ins>Tracks</b></ins>" + "<br>•HP %" + upgradeValueList["b11HP"],
-                "<b><ins>X-Bone</b></ins>" + "<br>•DEF %" + upgradeValueList["b12DEF"] +"<br>•TGH %" + upgradeValueList["b12TGH"],
-                "<b><ins>Super Conductor</b></ins>" + "<br>•Factory C. %" + upgradeValueList["b13FCd"] + "<br>•CATT %" + upgradeValueList["b13CAT"] + "<br>•DMG %" + upgradeValueList["b13DMG"],
-                "<b><ins>Gyrogun</b></ins>" + "<br>•DMG %" + upgradeValueList["b14DMG"] + "<br>•Armor Pen %" + upgradeValueList["b14ArP"]
-            ],
-            [
-                "<b><ins>Xalium Turbine</b></ins>" + "<br>•Rot. Speed %" + upgradeValueList["b21RoS"],
-                "<b><ins>Drone Amor</b></ins>" + "<br>•Drone HP %" + upgradeValueList["b22DHP"] + "<br>•DMG %" + upgradeValueList["b22DMG"],
-                "<b><ins>Liquid Shells</b></ins>" + "<br>•ATT %" + upgradeValueList["b22DMG"],
-                "<b><ins>Warhead</b></ins>" + "<br>•DMG %" + upgradeValueList["b24DMG"]
-            ],
-            [
-                "<b><ins>Firecontrol Unit</b></ins>" + "<br>•CCATT %" + upgradeValueList["b31CAT"] + "<br>•DMG %" + upgradeValueList["b31DMG"],
-                "<b><ins>Magaccelerator</b></ins>" + "<br>•ATT %" + upgradeValueList["b32ATT"] + "<br>•DMG %" + upgradeValueList["b32DMG"],
-                "<b><ins>Transmission</b></ins>" + "<br>•XC PEN %" + upgradeValueList["b33XCP"] + "<br>•MVR PEN %" + upgradeValueList["b33MVP"] + "<br>•AoE %" + upgradeValueList["b33AoE"],
-                "<b><ins>Oil Tech</b></ins>" + "<br>•AoE %" + upgradeValueList["b34AoE"] + "<br>•DMG %" + upgradeValueList["b34DMG"]
-            ],
-            [
-                "<b><ins>Cyberkit</b></ins>" + "<br>•Regen %" + upgradeValueList["b41Reg"] + "<br>•HP %" + upgradeValueList["b41HP"],
-                "<b><ins>Ulti Container</b></ins>" + "<br>•Ulti C. %" + upgradeValueList["b42UCd"] + "<br>•HP %" + upgradeValueList["b42HP"],
-                "<b><ins>Fin Stabilizer</b></ins>" + "<br>•RNG %" + upgradeValueList["b43RNG"] + "<br>•DMG %" + upgradeValueList["b43DMG"],
-                "<b><ins>Hyper Cooling</b></ins>" + "<br>•Fwd Speed %" + upgradeValueList["b44FwS"] + "<br>•DMG %" + upgradeValueList["b44DMG"] + "<br>•Ulti C. %" + upgradeValueList["b44UCd"]
-            ],
-            [
-                "<b><ins>Under Carriage</b></ins>" + "<br>•MVR. Pen %" + upgradeValueList["b51MVP"] + "<br>•DMG %" + upgradeValueList["b51DMG"],
-                "<b><ins>Ceramic Plates</b></ins>" + "<br>•HP %" + upgradeValueList["b52HP"] + "<br>•Armor Pen %" + upgradeValueList["52ArP"],
-                "<b><ins>Power Jumper</b></ins>" + "<br>•Jump C. %" + upgradeValueList["b53JCd"] + "<br>•DMG %" + upgradeValueList["b53DMG"],
-                "<b><ins>Geist Shell</b></ins>" + "<br>•DMG %" + upgradeValueList["b54DMG"] + "<br>•CATT %" + upgradeValueList["b54CAT"]
-            ],
-            [
-                "<b><ins>Repair System</b></ins>" + "<br>•Regen %" + upgradeValueList["b61Reg"] + "<br>•HP %" + upgradeValueList["b61HP"] + "<br>•DMG %" + upgradeValueList["b61DMG"],
-                "<b><ins>X-Bone</b></ins>" + "<br>•Acceleration %" + upgradeValueList["b62Acl"] + "<br>•HP %" + upgradeValueList["b62HP"] + "<br>•DMG %" + upgradeValueList["b62DMG"],
-                "<b><ins>Muzzle Upgrade</b></ins>" + "<br>•RNG %" + upgradeValueList["b63RNG"] + "<br>•DMG %" + upgradeValueList["b63DMG"],
-                "<b><ins>Megaron Armor</b></ins>" + "<br>•HP %" + upgradeValueList["b64HP"] + "<br>•DMG %" + upgradeValueList["b64DMG"] + "<br>•DEF %" + upgradeValueList["b64DEF"]
-            ],
-            [
-                "<b><ins>X-Powder</b></ins>" + "<br>•DMG %" + upgradeValueList["b71DMG"],
-                "<b><ins>Advanced Defkit</b></ins>" + "<br>•CC Def %" + upgradeValueList["b72CDF"] + "<br>•HP %" + upgradeValueList["b72HP"] + "<br>•DMG %" + upgradeValueList["b72DMG"],
-                "<b><ins>Diferantiel</b></ins>" + "<br>•XC Pen %" + upgradeValueList["b73XCP"] + "<br>•DMG %" + upgradeValueList["b73DMG"],
-                "<b><ins>Revised Hull</b></ins>" + "<br>•HP %" + upgradeValueList["b74HP"] + "<br>•CDEF %" + upgradeValueList["b74CDF"]
-            ]
-        ]; 
- 
-        var upgradeStats = { 
-            "HP":   0, "TGH":   0, "DEF":   0, "CDF":   0,
-            "DMG":  0, "ATT":   0, "ArP":   0, "CAT":   0, "RNG":   0, "AoE": 0,
-            "DHP":  0, "Reg":   0, "FCd":   0, "JCd":   0, "UCd":   0,
-            "FwS":  0, "RoS":   0, "Acl":   0, "MVP":   0, "XCP":   0,
-            "Xal":  0,
-        };
+    var upgradeTextList = [
+        [
+            "<b><ins>Tracks</b></ins>" + "<br>•HP %" + upgradeValueList["b11HP"],
+            "<b><ins>X-Bone</b></ins>" + "<br>•DEF %" + upgradeValueList["b12DEF"] +"<br>•TGH %" + upgradeValueList["b12TGH"],
+            "<b><ins>Super Conductor</b></ins>" + "<br>•Factory C. -%" + upgradeValueList["b13FCd"] + "<br>•CATT %" + upgradeValueList["b13CAT"] + "<br>•DMG %" + upgradeValueList["b13DMG"],
+            "<b><ins>Gyrogun</b></ins>" + "<br>•DMG %" + upgradeValueList["b14DMG"] + "<br>•Armor Pen. %" + upgradeValueList["b14ArP"]
+        ],
+        [
+            "<b><ins>Xalium Turbine</b></ins>" + "<br>•Rot. Speed %" + upgradeValueList["b21RoS"],
+            "<b><ins>Drone Amor</b></ins>" + "<br>•Drone HP %" + upgradeValueList["b22DHP"] + "<br>•DMG %" + upgradeValueList["b22DMG"],
+            "<b><ins>Liquid Shells</b></ins>" + "<br>•ATT %" + upgradeValueList["b22DMG"],
+            "<b><ins>Warhead</b></ins>" + "<br>•DMG %" + upgradeValueList["b24DMG"]
+        ],
+        [
+            "<b><ins>Firecontrol Unit</b></ins>" + "<br>•CCATT %" + upgradeValueList["b31CAT"] + "<br>•DMG %" + upgradeValueList["b31DMG"],
+            "<b><ins>Magaccelerator</b></ins>" + "<br>•ATT %" + upgradeValueList["b32ATT"] + "<br>•DMG %" + upgradeValueList["b32DMG"],
+            "<b><ins>Transmission</b></ins>" + "<br>•XC Penalty -%" + upgradeValueList["b33XCP"] + "<br>•MVR PEN -%" + upgradeValueList["b33MVP"] + "<br>•AoE %" + upgradeValueList["b33AoE"],
+            "<b><ins>Oil Tech</b></ins>" + "<br>•AoE %" + upgradeValueList["b34AoE"] + "<br>•DMG %" + upgradeValueList["b34DMG"]
+        ],
+        [
+            "<b><ins>Cyberkit</b></ins>" + "<br>•Regen %" + upgradeValueList["b41Reg"] + "<br>•HP %" + upgradeValueList["b41HP"],
+            "<b><ins>Ulti Container</b></ins>" + "<br>•Ulti C. -%" + upgradeValueList["b42UCd"] + "<br>•HP %" + upgradeValueList["b42HP"],
+            "<b><ins>Fin Stabilizer</b></ins>" + "<br>•RANGE %" + upgradeValueList["b43RNG"] + "<br>•DMG %" + upgradeValueList["b43DMG"],
+            "<b><ins>Hyper Cooling</b></ins>" + "<br>•Fwd Speed %" + upgradeValueList["b44FwS"] + "<br>•DMG %" + upgradeValueList["b44DMG"] + "<br>•Ulti C. -%" + upgradeValueList["b44UCd"]
+        ],
+        [
+            "<b><ins>Under Carriage</b></ins>" + "<br>•MVR. Pen -%" + upgradeValueList["b51MVP"] + "<br>•DMG %" + upgradeValueList["b51DMG"],
+            "<b><ins>Ceramic Plates</b></ins>" + "<br>•HP %" + upgradeValueList["b52HP"] + "<br>•Armor Pen %" + upgradeValueList["52ArP"],
+            "<b><ins>Power Jumper</b></ins>" + "<br>•Jump C. -%" + upgradeValueList["b53JCd"] + "<br>•DMG %" + upgradeValueList["b53DMG"],
+            "<b><ins>Geist Shell</b></ins>" + "<br>•DMG %" + upgradeValueList["b54DMG"] + "<br>•CATT %" + upgradeValueList["b54CAT"]
+        ],
+        [
+            "<b><ins>Repair System</b></ins>" + "<br>•Regen %" + upgradeValueList["b61Reg"] + "<br>•HP %" + upgradeValueList["b61HP"] + "<br>•DMG %" + upgradeValueList["b61DMG"],
+            "<b><ins>X-Bone</b></ins>" + "<br>•Acceleration %" + upgradeValueList["b62Acl"] + "<br>•HP %" + upgradeValueList["b62HP"] + "<br>•DMG %" + upgradeValueList["b62DMG"],
+            "<b><ins>Muzzle Upgrade</b></ins>" + "<br>•RANGE %" + upgradeValueList["b63RNG"] + "<br>•DMG %" + upgradeValueList["b63DMG"],
+            "<b><ins>Megaron Armor</b></ins>" + "<br>•HP %" + upgradeValueList["b64HP"] + "<br>•DMG %" + upgradeValueList["b64DMG"] + "<br>•DEF %" + upgradeValueList["b64DEF"]
+        ],
+        [
+            "<b><ins>X-Powder</b></ins>" + "<br>•DMG %" + upgradeValueList["b71DMG"],
+            "<b><ins>Advanced Defkit</b></ins>" + "<br>•CC Def %" + upgradeValueList["b72CDF"] + "<br>•HP %" + upgradeValueList["b72HP"] + "<br>•DMG %" + upgradeValueList["b72DMG"],
+            "<b><ins>Diferantiel</b></ins>" + "<br>•XC PEN -%" + upgradeValueList["b73XCP"] + "<br>•DMG %" + upgradeValueList["b73DMG"],
+            "<b><ins>Revised Hull</b></ins>" + "<br>•HP %" + upgradeValueList["b74HP"] + "<br>•CDEF %" + upgradeValueList["b74CDF"]
+        ]
+    ]; 
 
-        var buttonStats = {
-            "11": false, "12": false, "13": false, "14": false,
-            "21": false, "22": false, "23": false, "24": false,
-            "31": false, "32": false, "33": false, "34": false,
-            "41": false, "42": false, "43": false, "44": false,
-            "51": false, "52": false, "53": false, "54": false,
-            "61": false, "62": false, "63": false, "64": false,
-            "71": false, "72": false, "73": false, "74": false
-        };
+    var upgradeStats = { 
+        "HP":   0, "TGH":   0, "DEF":   0, "CDF":   0,
+        "DMG":  0, "ATT":   0, "ArP":   0, "CAT":   0, "RNG":   0, "AoE": 0,
+        "DHP":  0, "Reg":   0, "FCd":   0, "JCd":   0, "UCd":   0,
+        "FwS":  0, "RoS":   0, "Acl":   0, "MVP":   0, "XCP":   0,
+        "Xal":  0,
+    };
 
-        var selectedColor = '#' + "44e244";
-        var defaultColor = '#' + "dcdcdc";
+    var buttonStats = {
+        "11": false, "12": false, "13": false, "14": false,
+        "21": false, "22": false, "23": false, "24": false,
+        "31": false, "32": false, "33": false, "34": false,
+        "41": false, "42": false, "43": false, "44": false,
+        "51": false, "52": false, "53": false, "54": false,
+        "61": false, "62": false, "63": false, "64": false,
+        "71": false, "72": false, "73": false, "74": false
+    };
 
-        var maxUpgrade = 4;
+    var selectedColor = "#44e244";
+    var defaultColor = "#f5f5f5";
 
-        function onPageLoad()
+    var maxUpgrade = 4;
+
+    function onPageLoad()
+    {
+        InitButtonsText();
+
+        UpdateStats();
+    }
+
+    function InitButtonsText()
+    {
+        for (var j = 1; j < 8; j++)
         {
-            InitButtonsText();
-
-            UpdateStats();
-        }
-
-        function InitButtonsText()
-        {
-            for (var j = 1; j < 8; j++)
+            for (var k = 1; k < 5; k++)
             {
-                for (var k = 1; k < 5; k++)
+                var btnId = "button" + j + k;
+                var mbutton = document.getElementById(btnId);
+                mbutton.innerHTML = upgradeTextList[j-1][k-1];
+            }
+        }
+    }
+
+    function UpdateStats()
+    {
+        var keys = Object.keys(upgradeStats);
+        for (var i = 0; i < keys.length; i++)
+        {
+            var tdId = document.getElementById(keys[i]);
+            tdId.textContent = upgradeStats[keys[i]];
+        }
+    }
+
+    function SetActiveButton(btnNo)
+    {   
+        var buttonId = "button" + btnNo;
+        var mbutton = document.getElementById(buttonId);
+
+        mbutton.style.backgroundColor = selectedColor;
+        buttonStats[btnNo] = true;
+
+        if (parseInt(btnNo[1]) < maxUpgrade)
+        {
+            var btnNo2 = parseInt(btnNo) + 1;
+            var buttonId2 = "button" + btnNo2;
+
+            var mbutton2 = document.getElementById(buttonId2);
+            mbutton2.disabled = false;
+        }
+
+        var filteredKeys = Object.keys(upgradeValueList).filter(function(key) {return key.startsWith("b" + btnNo); });
+        for (var i = 0; i < filteredKeys.length; i++)
+        {
+            var statKey = filteredKeys[i].toString();
+            AddStats(statKey.substring(3), upgradeValueList[statKey]);
+        }
+
+        UpdateStats();
+    }
+
+    function SetDeactiveButton(btnNo)
+    {
+        var buttonId = "button" + btnNo;
+        var mbutton = document.getElementById(buttonId);
+
+        mbutton.style.backgroundColor = defaultColor;
+        buttonStats[btnNo] = false;
+
+        var filteredKeys = Object.keys(upgradeValueList).filter(function(key) {return key.startsWith("b" + btnNo); });
+        for (var i = 0; i < filteredKeys.length; i++)
+        {
+            var statKey = filteredKeys[i].toString();
+            AddStats(statKey.substring(3), -upgradeValueList[statKey]);
+        }
+
+        var btnNo2 = parseInt(btnNo);
+        for (var i = parseInt(btnNo[1]); i < maxUpgrade; i++) {
+            btnNo2++;
+            var buttonId2 = "button" + btnNo2;
+
+            var mbutton2 = document.getElementById(buttonId2);
+            mbutton2.style.backgroundColor = defaultColor;
+
+            if (buttonStats[btnNo2.toString()] == true)
+            {
+                var filteredKeys = Object.keys(upgradeValueList).filter(function(key) {return key.startsWith("b" + btnNo2); });
+
+                for (var j = 0; j < filteredKeys.length; j++)
                 {
-                    var btnId = "button" + j + k;
-                    var mbutton = document.getElementById(btnId);
-                    mbutton.innerHTML = upgradeList[j-1][k-1];
+                    var statKey = filteredKeys[j].toString();
+                    AddStats(statKey.substring(3), -upgradeValueList[statKey]);
                 }
+
+                buttonStats[btnNo2.toString()] = false;
             }
+            
+            mbutton2.disabled = true;
         }
 
-        function UpdateStats()
-        {
-            var keys = Object.keys(upgradeStats);
-            for (var i = 0; i < keys.length; i++)
-            {
-                var tdId = document.getElementById(keys[i]);
-                tdId.textContent = upgradeStats[keys[i]];
-            }
-        }
+        UpdateStats();
+    }
 
-        function SetActiveButton(btnNo)
-        {   
-            var buttonId = "button" + btnNo;
-            var mbutton = document.getElementById(buttonId);
+    function AddStats(statKey, addValue)
+    {
+        upgradeStats[statKey] += addValue; 
+    }
 
-            mbutton.style.backgroundColor = selectedColor;
-            buttonStats[btnNo] = true;
+    function OnClickButton(btn_ID)
+    {
+        var buttonNo = btn_ID.toString();
 
-            if (parseInt(btnNo[1]) < maxUpgrade)
-            {
-                var btnNo2 = parseInt(btnNo) + 1;
-                var buttonId2 = "button" + btnNo2;
+        if (buttonStats[buttonNo] === false) 
+        { SetActiveButton(buttonNo); }
+        else 
+        { SetDeactiveButton(buttonNo); }
+    }
 
-                var mbutton2 = document.getElementById(buttonId2);
-                mbutton2.disabled = false;
-            }
-
-            var filteredKeys = Object.keys(upgradeValueList).filter(function(key) {return key.startsWith("b" + btnNo); });
-            for (var i = 0; i < filteredKeys.length; i++)
-            {
-                var statKey = filteredKeys[i].toString();
-                AddStats(statKey.substring(3), upgradeValueList[statKey]);
-                
-            }
-
-            UpdateStats();
-        }
-
-        function SetDeactiveButton(btnNo)
-        {
-            var buttonId = "button" + btnNo;
-            var mbutton = document.getElementById(buttonId);
-
-            mbutton.style.backgroundColor = defaultColor;
-            buttonStats[btnNo] = false;
-
-            var filteredKeys = Object.keys(upgradeValueList).filter(function(key) {return key.startsWith("b" + btnNo); });
-            for (var i = 0; i < filteredKeys.length; i++)
-            {
-                var statKey = filteredKeys[i].toString();
-                AddStats(statKey.substring(3), -upgradeValueList[statKey]);
-            }
-
-            var btnNo2 = parseInt(btnNo);
-            for (var i = parseInt(btnNo[1]); i < maxUpgrade; i++) {
-                btnNo2++;
-                var buttonId2 = "button" + btnNo2;
-
-                var mbutton2 = document.getElementById(buttonId2);
-                mbutton2.style.backgroundColor = defaultColor;
-
-                if (buttonStats[btnNo2.toString()] == true)
-                {
-                    var filteredKeys = Object.keys(upgradeValueList).filter(function(key) {return key.startsWith("b" + btnNo2); });
-
-                    for (var j = 0; j < filteredKeys.length; j++)
-                    {
-                        var statKey = filteredKeys[j].toString();
-                        AddStats(statKey.substring(3), -upgradeValueList[statKey]);
-                    }
-
-                    buttonStats[btnNo2.toString()] = false;
-                }
-                
-                mbutton2.disabled = true;
-            }
-
-            UpdateStats();
-        }
-
-        function AddStats(statKey, addValue)
-        {
-            upgradeStats[statKey] += addValue; 
-        }
-
-        function OnClickButton11()
-        {
-            var buttonNo = "11";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-
-        function OnClickButton12()
-        {
-            var buttonNo = "12";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-
-        function OnClickButton13()
-        {
-            var buttonNo = "13";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-
-        function OnClickButton14()
-        {
-            var buttonNo = "14";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-
-        function OnClickButton21()
-        {
-            var buttonNo = "21";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-
-        function OnClickButton22()
-        {
-            var buttonNo = "22";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton23()
-        {
-            var buttonNo = "23";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton24()
-        {
-            var buttonNo = "24";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton31()
-        {
-            var buttonNo = "31";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton32()
-        {
-            var buttonNo = "32";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton33()
-        {
-            var buttonNo = "33";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton34()
-        {
-            var buttonNo = "34";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton41()
-        {
-            var buttonNo = "41";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton42()
-        {
-            var buttonNo = "42";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton43()
-        {
-            var buttonNo = "43";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton44()
-        {
-            var buttonNo = "44";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton51()
-        {
-            var buttonNo = "51";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton52()
-        {
-            var buttonNo = "52";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton53()
-        {
-            var buttonNo = "53";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton54()
-        {
-            var buttonNo = "54";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton61()
-        {
-            var buttonNo = "61";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton62()
-        {
-            var buttonNo = "62";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton63()
-        {
-            var buttonNo = "63";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton64()
-        {
-            var buttonNo = "64";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton71()
-        {
-            var buttonNo = "71";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton72()
-        {
-            var buttonNo = "72";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton73()
-        {
-            var buttonNo = "73";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-        
-        function OnClickButton74()
-        {
-            var buttonNo = "74";
-     
-            if (buttonStats[buttonNo] === false) 
-            { SetActiveButton(buttonNo); }
-            else 
-            { SetDeactiveButton(buttonNo); }
-        }
-
-    </script>
+</script>
 
     <br><br>
 
