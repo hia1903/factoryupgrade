@@ -1,494 +1,439 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <title>Factory Upgrade</title>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boş Sayfa</title>
+    <link href="https://fonts.cdnfonts.com/css/chasing-rabbits" rel="stylesheet">
 
     <style>
-        .container {
-            display: contents;
-            flex-wrap: wrap; 
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #171717;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+            
+            transform-origin: top;
         }
-        div {
-            background-color: aliceblue;
+        @media screen and (max-width: 768px) {
+            body {
+                transform: scale(0.6);
+            }
+        }
+
+        header {
+            padding: 5px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            color: #DA0037;
+            font-family: 'Chasing Rabbits', sans-serif;
+            font-size: 48px;
+        }
+        header h2 {
+            margin: 0;
+            color: #EDEDED;
+            font-family: 'Chasing Rabbits', sans-serif;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        nav {
+            background-color: #444444;
+            height: 48px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 30px;
+            transform: translateY(-25%);
+        }
+        .logo-link {
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .logo {
+            height: 96px;
+            display: block;
+        }
+        .nav-links {
+            display: flex;
+            gap: 100px;
+        }
+        .nav-link {
+            color: #EDEDED;
+            text-decoration: none;
+            font-family: 'Chasing Rabbits', sans-serif;
+            font-size: 24px;
+        }
+        .nav-link:hover {
+            text-decoration: none;
+            color: #DA0037;
+        }
+        .content-area {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(100, 1fr);
+            grid-template-rows: repeat(100, 1fr);
+            gap: 4px;
+            padding: 4px;
+
+            transform: scale(0.85);
+            transform-origin: top;
+        }
+        .update-area {
+            grid-area: 1 / 1 / 100 / 50;
+            /* border: 2px solid #EDEDED; */
+            display: grid;
+            grid-template-rows: repeat(7, 1fr);
+            gap: 10px;
+            padding: 10px;
+            overflow-y: visible;
+        }
+        .branch-area {
+            /* border: 1px solid #EDEDED; */
+            /* background-color: rgba(237, 237, 237, 0.1); */
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 10px;
+            height: 100%;
+        }
+        .branch-title {
+            color: #EDEDED;
+            border: 4px solid #EDEDED;
+
+            margin: 32px 12px;
+            padding: 4px;
+            border-radius: 4px;
+
+            grid-column: 1 / 2;
             display: flex;
             align-items: center;
-            justify-content: left;
+            justify-content: center;
 
-            width: fit-content; 
-            margin-right: 2px; 
-            margin-bottom: 5px; 
-            padding: 1px; 
-        }
-        button {
             text-align: center;
-            font-size: x-small;
-            width: 100px;
-            height: 60px;
-            margin: 2px;
-            padding: 5px;
-            border: 2px solid black;
-            background-color: #f5f5f5;
-
-            margin-right: 10px;
+            font-size: medium;
         }
-
-        .tableContainer {
-            display: contents; 
-            flex-wrap: wrap;
-        }
-        table {
+        .branch-button {
+            background-color: #171717;
+            border: 2px solid #EDEDED;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            height: 100%;
+            width: 100%;
             font-size: small;
-            background-color: black;
         }
+        .equipment-area {
+            grid-area: 1 / 51 / 69 / 100;
+            /* border: 2px solid #EDEDED; */
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+        .equipment-slot {
+            /* border: 1px solid #EDEDED; */
+            /* background-color: rgba(237, 237, 237, 0.1); */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 5px;
+        }
+        .description-button{
+            transform: translateX(-25%);
+        } 
+        .toggle-button {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background-color: #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .toggle-button.active {
+            background-color: #4CAF50;
+        }
+        .toggle-button::before {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            background-color: white;
+            border-radius: 5px;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+        }
+        .toggle-button.active::before {
+            transform: translateX(30px);
+        }
+
+
+        .element-slot-1 {
+            /* border: 1px solid #EDEDED; */
+            /* background-color: rgba(237, 237, 237, 0.05); */
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .element-slot-2 {
+            /* border: 1px solid #EDEDED; */
+            /* background-color: rgba(237, 237, 237, 0.05); */
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .equipment-element-1 {
+            width: 100%;
+            height: calc(100%);
+            border: 1px solid #EDEDED;
+            background-color: #222222;
+            cursor: pointer;
+            color: #EDEDED;
+        }
+        .equipment-element-21, .equipment-element-22 {
+            width: 100%;
+            height: calc(100% / 50 * 33);
+            border: 1px solid #EDEDED;
+            background-color: #222222;
+
+            cursor: pointer;
+
+            color: #EDEDED;
+        }    
+        .equipment-element-21 {
+            transform: translateY(50%);
+        }         
+        .hexa_slot {
+            display: grid;
+            gap: 10px;
+            padding: 5px;
+
+            align-items: center;
+            justify-content: center;
+        }           
+        .gear_hexas {
+            width: 100%;
+            height: auto;
+        }        
+        .stat-table-area {
+            grid-area: 70 / 51 / 100 / 100;
+            border: 2px solid #EDEDED;
+            display: grid;
+            grid-template-rows: repeat(4, 1fr);
+            transform: translateY(-2%);
+        }
+        .table-row {
+            width: 100%;
+            height: calc(100%);
+            border: 1px solid #EDEDED;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+        .table-title {
+            color: #EDEDED;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid #EDEDED;
+
+            margin: 4px 2px;
+            padding: 4px;
+        }
+         .table-box {
+            border-right: 1px solid #EDEDED;
+            background-color: rgba(237, 237, 237, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            color: #EDEDED;
+            font-size: medium;
+            text-align: center;
+            padding: 5px;
+            line-height: 1.2;
+        }      
+        .defStat{
+            color: #4caf50;
+        }        
+        .attStat{
+            color: #e53935;
+        }          
+        .mobilityStat{
+            color: #ff9800;
+        }        
+        .cDStat{
+            color: #42a5f5;
+        }        
+        .xalStat{
+            color: #ededed;
+            font-size: large;
+        }
+
     </style>
 </head>
+<body>
+    <header>
+        <h1>LUDEN GAMES</h1>
+        <h2>SSA WIKI</h2>
+    </header>
+    <nav>
+        <a href="mainpage.html" class="logo-link">
+            <img src="Luden_Logo.png" alt="Luden Games Logo" class="logo">
+        </a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">BUILDER</a>
+            <a href="https://www.youtube.com/@LudenGames" target="_blank" class="nav-link">YOUTUBE</a>
+        </div>
+    </nav>
+    <div class="content-area">
+        <div class="update-area">
+            <div class="branch-area">
+                <h5 class="branch-title" id="LabelBranch1">Başlık 1</h5>
+                <button class="branch-button" onclick="OnClickButton(id)" id="button11">Button 1</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button12">Button 2</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button13">Button 3</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button14">Button 4</button>
+            </div>
+            <div class="branch-area">
+                <h5 class="branch-title" id="LabelBranch2">Başlık 2</h5>
+                <button class="branch-button" onclick="OnClickButton(id)" id="button21">Button 1</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button22">Button 2</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button23">Button 3</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button24">Button 4</button>
+            </div>
+            <div class="branch-area">
+                <h5 class="branch-title" id="LabelBranch3">Başlık 3</h5>
+                <button class="branch-button" onclick="OnClickButton(id)" id="button31">Button 1</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button32">Button 2</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button33">Button 3</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button34">Button 4</button>
+            </div>
+            <div class="branch-area">
+                <h5 class="branch-title" id="LabelBranch4">Başlık 4</h5>
+                <button class="branch-button" onclick="OnClickButton(id)" id="button41">Button 1</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button42">Button 2</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button43">Button 3</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button44">Button 4</button>
+            </div>
+            <div class="branch-area">
+                <h5 class="branch-title" id="LabelBranch5">Başlık 5</h5>
+                <button class="branch-button" onclick="OnClickButton(id)" id="button51">Button 1</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button52">Button 2</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button53">Button 3</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button54">Button 4</button>
+            </div>
+            <div class="branch-area">
+                <h5 class="branch-title" id="LabelBranch6">Başlık 6</h5>
+                <button class="branch-button" onclick="OnClickButton(id)" id="button61">Button 1</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button62">Button 2</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button63">Button 3</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button64">Button 4</button>
+            </div>
+            <div class="branch-area">
+                <h5 class="branch-title" id="LabelBranch7">Başlık 7</h5>
+                <button class="branch-button" onclick="OnClickButton(id)" id="button71">Button 1</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button72">Button 2</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button73">Button 3</button>
+                <button class="branch-button" disabled onclick="OnClickButton(id)" id="button74">Button 4</button>
+            </div>
+        </div>
+        <div class="equipment-area">
 
-<body onload="onPageLoad()"> 
+            <div class="equipment-slot">
+                <div class="description-button toggle-button" id="toggleDescription" onclick="ToggleDescription(this)" title="Enable Detailed Upgrade Descriptions"></div>
+            </div>
 
-    <hr>
+            <div class="equipment-slot">
+                <div class="element-slot-1">
+                    <button class="equipment-element-1" onclick="OnClickEquipmentButton(id)" id="X5">X5</button>
+                    <button class="equipment-element-1" onclick="OnClickEquipmentButton(id)"  id="X3">X3</button>
+                    <button class="equipment-element-1" onclick="OnClickEquipmentButton(id)"  id="X1">X1</button>
+                </div>
+                <div class="element-slot-2">
+                    <button class="equipment-element-21" onclick="OnClickEquipmentButton(id)" id="X4">X4</button>
+                    <button class="equipment-element-22" onclick="OnClickEquipmentButton(id)" id="X2">X2</button>
+                </div>
+            </div>
 
-<div class="container">    
-    <div>
-        <Label style="width: 70px; padding: 5px;">Mechanic:</Label>
-        <button onclick="OnClickButton(11)" id="button11"></button>
-        <button disabled onclick="OnClickButton(12)" id="button12"></button>        
-        <button disabled onclick="OnClickButton(13)" id="button13"></button>
-        <button disabled onclick="OnClickButton(14)" id="button14"></button>
+            <div class="equipment-slot"></div>
+
+            <div class="equipment-slot">
+                <div class="element-slot-1">
+                    <button class="equipment-element-1" onclick="OnClickEquipmentButton(id)" id="Z5">Z5</button>
+                    <button class="equipment-element-1" onclick="OnClickEquipmentButton(id)" id="Z3">Z3</button>
+                    <button class="equipment-element-1" onclick="OnClickEquipmentButton(id)" id="Z1">Z1</button>
+                </div>
+                <div class="element-slot-2">
+                    <button class="equipment-element-21" onclick="OnClickEquipmentButton(id)"  id="Z4">Z4</button>
+                    <button class="equipment-element-22" onclick="OnClickEquipmentButton(id)"  id="Z2">Z2</button>
+                </div>
+            </div>
+
+            <div class="hexa-slot">
+                <img src="upgrades_hexas.png" alt="" class="gear_hexas">
+            </div>
+
+            <div class="equipment-slot">
+                <div class="element-slot-1">
+                    <button class="equipment-element-1" onclick="OnClickEquipmentButton(id)"  id="C5">C5</button>
+                    <button class="equipment-element-1" onclick="OnClickEquipmentButton(id)"  id="C3">C3</button>
+                    <button class="equipment-element-1" onclick="OnClickEquipmentButton(id)"  id="C1">C1</button>
+                </div>
+                <div class="element-slot-2">
+                    <button class="equipment-element-21" onclick="OnClickEquipmentButton(id)" id="C4">C4</button>
+                    <button class="equipment-element-22" onclick="OnClickEquipmentButton(id)" id="C2">C2</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="stat-table-area">
+            <div class="table-row">
+                <div class="table-title defStat">Savunma</div>
+                <div class="table-box defStat" id="HP"></div>
+                <div class="table-box defStat" id="DEF"></div>
+                <div class="table-box defStat" id="TGH"></div>
+                <div class="table-box defStat" id="CDF"></div>
+                <div class="table-box defStat" id="DHP"></div>
+                <div class="table-box defStat" id="Reg"></div>
+            </div>
+            <div class="table-row">
+                <div class="table-title attStat">Saldırı</div>
+                <div class="table-box attStat" id="DMG"></div>
+                <div class="table-box attStat" id="ATT"></div>
+                <div class="table-box attStat" id="ArP"></div>
+                <div class="table-box attStat" id="CAT"></div>
+                <div class="table-box attStat" id="RNG"></div>
+                <div class="table-box attStat" id="AoE"></div>
+            </div>
+            <div class="table-row">
+                <div class="table-title mobilityStat">Mobilite</div>
+                <div class="table-box mobilityStat" id="FwS"></div>
+                <div class="table-box mobilityStat" id="RvS"></div>
+                <div class="table-box mobilityStat" id="RoS"></div>
+                <div class="table-box mobilityStat" id="Acl"></div>
+                <div class="table-box mobilityStat" id="MvP"></div>
+                <div class="table-box mobilityStat" id="XCP"></div>
+            </div>
+            <div class="table-row">
+                <div class="table-title cDStat">Bekleme Süresi</div>
+                <div class="table-box cDStat" id="FCd"></div>
+                <div class="table-box cDStat" id="JCd"></div>
+                <div class="table-box cDStat" id="UCd"></div>
+                <div class="table-box xalStat" id="Xal" style="grid-area: 1 / 5 / 1 / 8;"></div>
+            </div>
+        </div>
     </div>
 
-    <div>
-        <Label style="width: 70px; padding: 5px;">Engine:</Label>
-        <button onclick="OnClickButton(21)" id="button21"></button>
-        <button disabled onclick="OnClickButton(22)" id="button22"></button>        
-        <button disabled onclick="OnClickButton(23)" id="button23"></button>
-        <button disabled onclick="OnClickButton(24)" id="button24"></button>
-    </div>
-
-    <div>
-        <Label style="width: 70px; padding: 5px;">Gun:</Label>
-        <button onclick="OnClickButton(31)" id="button31"></button>
-        <button disabled onclick="OnClickButton(32)" id="button32"></button>        
-        <button disabled onclick="OnClickButton(33)" id="button33"></button>
-        <button disabled onclick="OnClickButton(34)" id="button34"></button>
-    </div>
-
-    <div>
-        <Label style="width: 70px; padding: 5px;">Ammo:</Label>
-        <button onclick="OnClickButton(41)" id="button41"></button>
-        <button disabled onclick="OnClickButton(42)" id="button42"></button>        
-        <button disabled onclick="OnClickButton(43)" id="button43"></button>
-        <button disabled onclick="OnClickButton(44)" id="button44"></button>
-    </div>
-    
-    <div>
-        <Label style="width: 70px; padding: 5px;">Geist:</Label>
-        <button onclick="OnClickButton(51)" id="button51"></button>
-        <button disabled onclick="OnClickButton(52)" id="button52"></button>        
-        <button disabled onclick="OnClickButton(53)" id="button53"></button>
-        <button disabled onclick="OnClickButton(54)" id="button54"></button>
-    </div>
-
-    <div>
-        <Label style="width: 70px; padding: 5px;">Armor:</Label>
-        <button onclick="OnClickButton(61)" id="button61"></button>
-        <button disabled onclick="OnClickButton(62)" id="button62"></button>        
-        <button disabled onclick="OnClickButton(63)" id="button63"></button>
-        <button disabled onclick="OnClickButton(64)" id="button64"></button>
-    </div>
-
-    <div>
-        <Label style="width: 70px; padding: 5px;">Hull:</Label>
-        <button onclick="OnClickButton(71)" id="button71"></button>
-        <button disabled onclick="OnClickButton(72)" id="button72"></button>        
-        <button disabled onclick="OnClickButton(73)" id="button73"></button>
-        <button disabled onclick="OnClickButton(74)" id="button74"></button>
-    </div>
-</div>
-
-<hr>
-
-<div class="tableContainer">
-    <table width="400">
-            <tr bgcolor="aliceblue">
-                <th width="80">HP</th>
-                <th width="80">TGH</th>
-                <th width="80">DEF</th>
-                <th width="80">CCDEF</th>
-            </tr>
-            <tr align="center" bgcolor="#f5f5f5">
-                <td id="HP">-</td>
-                <td id="TGH">-</td>
-                <td id="DEF">-</td>
-                <td id="CDF">-</td>
-            </tr>
-    </table>    
-    <table width="600">
-            <tr bgcolor="aliceblue">
-                <th width="80">DMG</th>
-                <th width="80">ATT</th>
-                <th width="80">Armor Pen</th>
-                <th width="80">CCATT</th>
-                <th width="80">RANGE</th>
-                <th width="80">AoE</th>
-            </tr>
-            <tr align="center" bgcolor="#f5f5f5">
-                <td id="DMG">-</td>
-                <td id="ATT">-</td>
-                <td id="ArP">-</td>
-                <td id="CAT">-</td>
-                <td id="RNG">-</td>
-                <td id="AoE">-</td>
-            </tr>
-    </table>    
-    <table width="500">
-            <tr bgcolor="aliceblue">
-                <th width="80">Drone HP</th>
-                <th width="80">Regen</th>
-                <th width="80">Factory Cd.</th>
-                <th width="80">Jump Cd.</th>
-                <th width="80">Ulti Cd.</th>
-            </tr>
-            <tr align="center" bgcolor="#f5f5f5">
-                <td id="DHP">-</td>
-                <td id="Reg">-</td>
-                <td id="FCd">-</td>
-                <td id="JCd">-</td>
-                <td id="UCd">-</td>
-            </tr>
-    </table>    
-    <table width="500">
-            <tr bgcolor="aliceblue">
-                <th width="100">Fwd Speed</th>
-                <th width="100">Rot Speed</th>
-                <th width="100">Acceleration</th>
-                <th width="100">MVR PEN</th>
-                <th width="100">XC PEN</th>
-            </tr>
-            <tr align="center" bgcolor="#f5f5f5">
-                <td id="FwS">-</td>
-                <td id="RoS">-</td>
-                <td id="Acl">-</td>
-                <td id="MVP">-</td>
-                <td id="XCP">-</td>
-            </tr>
-    </table>    
-    <table width="100">
-            <tr bgcolor="aliceblue">
-                <th width="100">Total Xalium</th>
-            </tr>
-            <tr align="center" bgcolor="#f5f5f5">
-                <td id="Xal">-</td>
-            </tr>
-    </table>
-</div>
-
-<hr>
-
-<div>
-    <table width="1000"  style=" font-size: medium;">
-        <tr bgcolor="85c5c7">
-            <th width="80">Upgrade Kısaltmaları</th>
-            <th>Kısaltma Açıklamaları</th>
-        </tr>
-        <tr bgcolor="#f5f5f5">
-            <td>HP</td>
-            <td>Max Hitpoint Booster, Maksimum Sağlık Puanı Artırıcı</td>
-        </tr>
-        <tr align="left" bgcolor="aliceblue">
-            <td> Regen</td>
-            <td> HP Regeneration Booster, İyileşme Artırıcı.</td>
-        </tr>
-        <tr align="left" bgcolor="#f5f5f5">
-            <td>DMG</td>
-            <td>Damage Booster, Hasar Artırıcı.</td>
-        </tr>
-        <tr align="left" bgcolor="aliceblue">
-            <td>DEF</td>
-            <td> Defence Booser, Savunma Artırıcı (Eğer savunan’ın DEF’i rakibin ATT’sinden fazla ise, daha az hasar alır.)</td>
-        </tr>
-        <tr align="left" bgcolor="#f5f5f5">
-            <td>ATT</td>
-            <td>Attack Booster, Saldırı Artırıcı (Eğer saldıran tarafın ATT’si, rakibin DEF’inden fazlaysa bonus hasar verir.)</td>
-        </tr>
-        <tr align="left" bgcolor="aliceblue">
-            <td>CCDEF</td>
-            <td>Crowd Control Defence Booster, Kitle Kontrolü Defansı Artırıcı. (Eğer savunan tarafın CCDEF’i saldıran tarafın CCATT’ından fazlaysa, savunan taraf kitle kontrolü yeteneklerinden (stun, disarm gibi) daha hızlı kurtulur.)</td>
-        </tr>
-
-        <tr align="left" bgcolor="#f5f5f5">
-            <td>CCATT</td>
-            <td>Crowd Control Attack Booster, Kitle Kontrolü Saldırısı Artırıcı. (Eğer saldıran tarafın CCATT’ı savunan tarafın CCDEF’inden fazlaysa, saldıran taraf kitle kontrolü yeteneklerine (stun, disarm gibi) bonus süre alır.)</td>
-        </tr>
-
-        <tr align="left"bgcolor="aliceblue">
-            <td>Factory Cd</td>
-            <td> Factory Cooldown Reducer, Fabrika Soğuma Süresi Azaltıcı. (Drone üretim cooldown’ını düşürür.)
-            </td>
-        </tr>
-
-        <tr align="left" bgcolor="#f5f5f5">
-            <td>TGH</td>
-            <td>Toughness Booster, Dayanıklılık Artırıcı. (Rakibin mermisinin Armor Penetration özelliği Toughness-Penetration testine girer. Eğer testi geçemezse mermi zırhı delip yoluna devam edemez. Eğer testi geçerse dahi, merminin bir sonraki hedefteki zırh delici özelliği düşer. Ayrıca iki XBT çarpıştıklarında Toughness’ı yüksek olan daha az hasar alır.)</td>
-        </tr>
-
-        <tr align="left" bgcolor="aliceblue">
-            <td>Armor Pen</td>
-            <td>Armor Penetration Booster, Zırh Delici Özellik Artırıcı. (Merminizin armor penetration özelliği, rakibin Toughness’ı ile teste girer. Eğer merminiz testi geçerse yoluna devam eder ve başka bir hedef ile Toughness teste girer. Her Toughness test, merminin zırh delici özelliğini düşürür.) - (Başlıca Faydalı olduğu tanklar: Khan, Sphinx, Insolence)</td>
-        </tr>
-
-        <tr align="left" bgcolor="#f5f5f5">
-            <td>Drone HP</td>
-            <td>Drone Hitpoint Booster, Drone Sağlık Puanı Artırıcı. (Üretilen Drone'lerin maksimum sağlık puanı.)</td>
-        </tr>
-        
-        <tr align="left" bgcolor="aliceblue">
-            <td>MVR PEN</td>
-            <td>Manuever Penalty Reducer, Manervra Penaltısı Azaltıcı. (Tank sağa sola dönerken bir miktan hız kaybeder. Penaltı azaltıcı bu hız kaybının etkisini azaltır.)</td>
-        </tr>
-        
-        <tr align="left" bgcolor="#f5f5f5">
-            <td>Acceleration</td>
-            <td>Acceleration Booster, İvme Artırıcı. (XBT’nin ivmesini artırır, yani maks hıza ulaşma süresini azaltır.)</td>
-        </tr>
-        
-        <tr align="left" bgcolor="aliceblue">
-            <td>XCPEN</td>
-            <td>Cross Country Penalty Reducer, Arazi Hareket Penaltısı Azaltıcı. (XBT’nin arazide hareket penaltısını azaltır)</td>
-        </tr>
-        
-        <tr align="left" bgcolor="#f5f5f5">
-            <td>Fwd Speed</td>
-            <td>Forward Speed Booster, Maksimum İleri Hız Artırıcı.</td>
-        </tr>
-        
-        <tr align="left" bgcolor="aliceblue">
-            <td>Rot Speed</td>
-            <td>Rotation Speed Booster, Manevra Hızı Artırıcı</td>
-        </tr>
-        
-        <tr align="left" bgcolor="#f5f5f5">
-            <td>Jump Cooldown</td>
-            <td>Jump Cooldown Reducer, Işınlanma Cooldown Azaltıcı. (Üsse ve Portal’a ışınlanma cooldown’ını düşürür.)</td>
-        </tr>
-        
-        <tr align="left" bgcolor="aliceblue">
-            <td>Ulti Cd.</td>
-            <td>Ulti Cooldown Reducers, Ulti Soğuma Süresi Azaltıcı. (Ultimate yeteneğinin cooldown’ını düşürür.)</td>
-        </tr>
-        
-        <tr align="left" bgcolor="#f5f5f5">
-            <td>RANGE</td>
-            <td>Range Booster, Menzil Artırıcı.</td>
-        </tr>        
-        
-        <tr align="left" bgcolor="aliceblue">
-            <td>AoE</td>
-            <td>Area Effect Booster, Alan Efekti Artırıcı. (Alana vuran yeteneklerin etki yarıçapını arttırır) (Başlıca faydalı olduğu tanklar: Freedom Fighter, Queen, Sphinx, Panther)</td>
-        </tr>
-        
-</table>
-</div>
-
-
-<script>
-    var upgradeValueList = {
-        "b11Xal": 1150, "b11HP":  30,                                  "b12Xal": 1300, "b12DEF": 40,  "b12TGH": 40,                   "b13Xal": 1850, "b13FCd": -50, "b13CAT": 40,  "b13DMG": 20,    "b14Xal": 4700, "b14DMG": 65, "b14ArP": 20,
-        "b21Xal": 850,  "b21RoS": 10,                                  "b22Xal": 1850, "b22DHP": 80,  "b22DMG": 20,                   "b23Xal": 1700, "b23ATT": 80,                                  "b24Xal": 4150, "b24DMG": 65,
-        "b31Xal": 850,  "b31CAT": 40,  "b31DMG": 10,                   "b32Xal": 1450, "b32ATT": 40,  "b32DMG": 25,                   "b33Xal": 2400, "b33XCP": -25, "b33MVP": -25, "b33AoE": 5,     "b34Xal": 3700, "b34AoE": 5, "b34DMG":  50,
-        "b41Xal": 750,  "b41Reg": 10,  "b41HP":  15,                   "b42Xal": 1000, "b42UCd": -10, "b42HP":  20,                   "b43Xal": 2200, "b43RNG": 5,   "b43DMG": 10,                   "b44Xal": 2300, "b44FwS": 10, "b44DMG": 30, "b44UCd": -10,
-        "b51Xal": 1000, "b51MVP": -25, "b51DMG": 15,                   "b52Xal": 1000, "b52HP":  15,  "52ArP":  20,                   "b53Xal": 1200, "b53JCd": -20, "b53DMG": 20,                   "b54Xal": 2450, "b54DMG": 40, "b54CAT": 40,
-        "b61Xal": 950,  "b61Reg": 10,  "b61HP" : 15, "b61DMG": 10,     "b62Xal": 1300, "b62Acl": 10,  "b62HP":  15, "b62DMG": 10,     "b63Xal": 1300, "b63RNG": 5,   "b63DMG": 10,                   "b64Xal": 2800, "b64HP":  20, "b64DMG": 20, "b64DEF": 80,
-        "b71Xal": 350,  "b71DMG": 15,                                  "b72Xal": 1450, "b72CDF": 40,  "b72HP":  15, "b72DMG": 15,     "b73Xal": 1750, "b73XCP": -25, "b73DMG": 30,                   "b74Xal": 2850, "b74HP":  30, "b74CDF": 80
-    }
-
-    var upgradeTextList = [
-        [
-            "<b><ins>Tracks</b></ins>" + "<br>•HP %" + upgradeValueList["b11HP"],
-            "<b><ins>X-Bone</b></ins>" + "<br>•DEF %" + upgradeValueList["b12DEF"] +"<br>•TGH %" + upgradeValueList["b12TGH"],
-            "<b><ins>Super Conductor</b></ins>" + "<br>•Factory C. -%" + upgradeValueList["b13FCd"] + "<br>•CATT %" + upgradeValueList["b13CAT"] + "<br>•DMG %" + upgradeValueList["b13DMG"],
-            "<b><ins>Gyrogun</b></ins>" + "<br>•DMG %" + upgradeValueList["b14DMG"] + "<br>•Armor Pen. %" + upgradeValueList["b14ArP"]
-        ],
-        [
-            "<b><ins>Xalium Turbine</b></ins>" + "<br>•Rot. Speed %" + upgradeValueList["b21RoS"],
-            "<b><ins>Drone Amor</b></ins>" + "<br>•Drone HP %" + upgradeValueList["b22DHP"] + "<br>•DMG %" + upgradeValueList["b22DMG"],
-            "<b><ins>Liquid Shells</b></ins>" + "<br>•ATT %" + upgradeValueList["b23ATT"],
-            "<b><ins>Warhead</b></ins>" + "<br>•DMG %" + upgradeValueList["b24DMG"]
-        ],
-        [
-            "<b><ins>Firecontrol Unit</b></ins>" + "<br>•CCATT %" + upgradeValueList["b31CAT"] + "<br>•DMG %" + upgradeValueList["b31DMG"],
-            "<b><ins>Magaccelerator</b></ins>" + "<br>•ATT %" + upgradeValueList["b32ATT"] + "<br>•DMG %" + upgradeValueList["b32DMG"],
-            "<b><ins>Transmission</b></ins>" + "<br>•XC Penalty -%" + upgradeValueList["b33XCP"] + "<br>•MVR PEN -%" + upgradeValueList["b33MVP"] + "<br>•AoE %" + upgradeValueList["b33AoE"],
-            "<b><ins>Oil Tech</b></ins>" + "<br>•AoE %" + upgradeValueList["b34AoE"] + "<br>•DMG %" + upgradeValueList["b34DMG"]
-        ],
-        [
-            "<b><ins>Cyberkit</b></ins>" + "<br>•Regen %" + upgradeValueList["b41Reg"] + "<br>•HP %" + upgradeValueList["b41HP"],
-            "<b><ins>Ulti Container</b></ins>" + "<br>•Ulti C. -%" + upgradeValueList["b42UCd"] + "<br>•HP %" + upgradeValueList["b42HP"],
-            "<b><ins>Fin Stabilizer</b></ins>" + "<br>•RANGE %" + upgradeValueList["b43RNG"] + "<br>•DMG %" + upgradeValueList["b43DMG"],
-            "<b><ins>Hyper Cooling</b></ins>" + "<br>•Fwd Speed %" + upgradeValueList["b44FwS"] + "<br>•DMG %" + upgradeValueList["b44DMG"] + "<br>•Ulti C. -%" + upgradeValueList["b44UCd"]
-        ],
-        [
-            "<b><ins>Under Carriage</b></ins>" + "<br>•MVR. Pen -%" + upgradeValueList["b51MVP"] + "<br>•DMG %" + upgradeValueList["b51DMG"],
-            "<b><ins>Ceramic Plates</b></ins>" + "<br>•HP %" + upgradeValueList["b52HP"] + "<br>•Armor Pen %" + upgradeValueList["52ArP"],
-            "<b><ins>Power Jumper</b></ins>" + "<br>•Jump C. -%" + upgradeValueList["b53JCd"] + "<br>•DMG %" + upgradeValueList["b53DMG"],
-            "<b><ins>Geist Shell</b></ins>" + "<br>•DMG %" + upgradeValueList["b54DMG"] + "<br>•CATT %" + upgradeValueList["b54CAT"]
-        ],
-        [
-            "<b><ins>Repair System</b></ins>" + "<br>•Regen %" + upgradeValueList["b61Reg"] + "<br>•HP %" + upgradeValueList["b61HP"] + "<br>•DMG %" + upgradeValueList["b61DMG"],
-            "<b><ins>X-Bone</b></ins>" + "<br>•Acceleration %" + upgradeValueList["b62Acl"] + "<br>•HP %" + upgradeValueList["b62HP"] + "<br>•DMG %" + upgradeValueList["b62DMG"],
-            "<b><ins>Muzzle Upgrade</b></ins>" + "<br>•RANGE %" + upgradeValueList["b63RNG"] + "<br>•DMG %" + upgradeValueList["b63DMG"],
-            "<b><ins>Megaron Armor</b></ins>" + "<br>•HP %" + upgradeValueList["b64HP"] + "<br>•DMG %" + upgradeValueList["b64DMG"] + "<br>•DEF %" + upgradeValueList["b64DEF"]
-        ],
-        [
-            "<b><ins>X-Powder</b></ins>" + "<br>•DMG %" + upgradeValueList["b71DMG"],
-            "<b><ins>Advanced Defkit</b></ins>" + "<br>•CC Def %" + upgradeValueList["b72CDF"] + "<br>•HP %" + upgradeValueList["b72HP"] + "<br>•DMG %" + upgradeValueList["b72DMG"],
-            "<b><ins>Diferantiel</b></ins>" + "<br>•XC PEN -%" + upgradeValueList["b73XCP"] + "<br>•DMG %" + upgradeValueList["b73DMG"],
-            "<b><ins>Revised Hull</b></ins>" + "<br>•HP %" + upgradeValueList["b74HP"] + "<br>•CDEF %" + upgradeValueList["b74CDF"]
-        ]
-    ]; 
-
-    var upgradeStats = { 
-        "HP":   0, "TGH":   0, "DEF":   0, "CDF":   0,
-        "DMG":  0, "ATT":   0, "ArP":   0, "CAT":   0, "RNG":   0, "AoE": 0,
-        "DHP":  0, "Reg":   0, "FCd":   0, "JCd":   0, "UCd":   0,
-        "FwS":  0, "RoS":   0, "Acl":   0, "MVP":   0, "XCP":   0,
-        "Xal":  0,
-    };
-
-    var buttonStats = {
-        "11": false, "12": false, "13": false, "14": false,
-        "21": false, "22": false, "23": false, "24": false,
-        "31": false, "32": false, "33": false, "34": false,
-        "41": false, "42": false, "43": false, "44": false,
-        "51": false, "52": false, "53": false, "54": false,
-        "61": false, "62": false, "63": false, "64": false,
-        "71": false, "72": false, "73": false, "74": false
-    };
-
-    var selectedColor = "#44e244";
-    var defaultColor = "#f5f5f5";
-
-    var maxUpgrade = 4;
-
-    function onPageLoad()
-    {
-        InitButtonsText();
-
-        UpdateStats();
-    }
-
-    function InitButtonsText()
-    {
-        for (var j = 1; j < 8; j++)
-        {
-            for (var k = 1; k < 5; k++)
-            {
-                var btnId = "button" + j + k;
-                var mbutton = document.getElementById(btnId);
-                mbutton.innerHTML = upgradeTextList[j-1][k-1];
-            }
-        }
-    }
-
-    function UpdateStats()
-    {
-        var keys = Object.keys(upgradeStats);
-        for (var i = 0; i < keys.length; i++)
-        {
-            var tdId = document.getElementById(keys[i]);
-            tdId.textContent = upgradeStats[keys[i]];
-        }
-    }
-
-    function SetActiveButton(btnNo)
-    {   
-        var buttonId = "button" + btnNo;
-        var mbutton = document.getElementById(buttonId);
-
-        mbutton.style.backgroundColor = selectedColor;
-        buttonStats[btnNo] = true;
-
-        if (parseInt(btnNo[1]) < maxUpgrade)
-        {
-            var btnNo2 = parseInt(btnNo) + 1;
-            var buttonId2 = "button" + btnNo2;
-
-            var mbutton2 = document.getElementById(buttonId2);
-            mbutton2.disabled = false;
-        }
-
-        var filteredKeys = Object.keys(upgradeValueList).filter(function(key) {return key.startsWith("b" + btnNo); });
-        for (var i = 0; i < filteredKeys.length; i++)
-        {
-            var statKey = filteredKeys[i].toString();
-            AddStats(statKey.substring(3), upgradeValueList[statKey]);
-        }
-
-        UpdateStats();
-    }
-
-    function SetDeactiveButton(btnNo)
-    {
-        var buttonId = "button" + btnNo;
-        var mbutton = document.getElementById(buttonId);
-
-        mbutton.style.backgroundColor = defaultColor;
-        buttonStats[btnNo] = false;
-
-        var filteredKeys = Object.keys(upgradeValueList).filter(function(key) {return key.startsWith("b" + btnNo); });
-        for (var i = 0; i < filteredKeys.length; i++)
-        {
-            var statKey = filteredKeys[i].toString();
-            AddStats(statKey.substring(3), -upgradeValueList[statKey]);
-        }
-
-        var btnNo2 = parseInt(btnNo);
-        for (var i = parseInt(btnNo[1]); i < maxUpgrade; i++) {
-            btnNo2++;
-            var buttonId2 = "button" + btnNo2;
-
-            var mbutton2 = document.getElementById(buttonId2);
-            mbutton2.style.backgroundColor = defaultColor;
-
-            if (buttonStats[btnNo2.toString()] == true)
-            {
-                var filteredKeys = Object.keys(upgradeValueList).filter(function(key) {return key.startsWith("b" + btnNo2); });
-
-                for (var j = 0; j < filteredKeys.length; j++)
-                {
-                    var statKey = filteredKeys[j].toString();
-                    AddStats(statKey.substring(3), -upgradeValueList[statKey]);
-                }
-
-                buttonStats[btnNo2.toString()] = false;
-            }
-            
-            mbutton2.disabled = true;
-        }
-
-        UpdateStats();
-    }
-
-    function AddStats(statKey, addValue)
-    {
-        upgradeStats[statKey] += addValue; 
-    }
-
-    function OnClickButton(btn_ID)
-    {
-        var buttonNo = btn_ID.toString();
-
-        if (buttonStats[buttonNo] === false) 
-        { SetActiveButton(buttonNo); }
-        else 
-        { SetDeactiveButton(buttonNo); }
-    }
-
-</script>
-
-    <br><br>
-
+    <script src="app.js"></script>
 </body>
 </html>

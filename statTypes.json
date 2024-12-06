@@ -1,0 +1,131 @@
+{
+    "statTypes": {
+        "HP": {
+            "description" : "HP Booster.\n\t•Maksimum Can Değerini artırır.",
+            "detailedDescription" : "HP Booster.\n\t•Belirtilen yüzde oranında mevcut can değeri artar.",
+            "display" : "HP",
+			"value" : 0
+        }, 
+        "TGH": {
+            "description" :"Toughness Booster.\n\t•Zırh Değerini artırır.",
+			"detailedDescription" : "Toughness Booster.\n\t•TGH, rakip Armor Pen değeri ile teste girer.\n\t•TGH değeri, rakip Armor Pen değerinden fazla ise mermiler XBT'yi delip geçemez.\n\t•İki XBT çarpıştığında da TGH değeri yüksek olan daha az hasar alır.",
+            "display" : "TGH",
+			"value" : 0 
+        }, 
+        "DEF": {
+            "description" :"Defence Booster.\n\t•Savunma Değerini artırır." , 
+			"detailedDescription" : "Defence Booster.\n\t•DEF, rakip ATT değeri ile teste girer.\n\t•DEF değeri, rakip ATT değerinden fazla ise XBT daha az hasar alır.",
+            "display" : "DEF",
+			"value" : 0 
+        }, 
+        "CDF": {
+            "description" :"CC (CrowdControl) Defence Booster.\n\t•Kitle Kontrol Savunmasını artırır." , 
+			"detailedDescription" : "CC (CrowdControl) Defence Booster .\n\t•CCDEF, rakip CCATT değeri ile teste girer.\n\t•CCDEF değeri, rakip CCATT değerinden fazla ise kitle kontrol süresi azalır.",
+            "display" : "CC DEF",
+			"value" : 0 
+        }, 
+        "DMG": {
+            "description" :"Damage Booster.\n\t•Hasar Değerini artırır." ,  
+			"detailedDescription" : "Damage Booster.\n\t•Belirtilen yüzde oranında mevcut hasar değeri artar.",
+            "display" : "DMG",
+			"value" : 0 
+        }, 
+        "ATT": {
+            "description" :"Attack Booster.\n\t•Saldırı Değerini artırır." , 
+			"detailedDescription" : "Attack Booster.\n\t•ATT, rakip DEF değeri ile teste girer.\n\t•ATT değeri, rakip DEF değerinden fazla ise XBT daha fazla hasar verir.\n\t•ATT ve DMG geliştirmeleri birlikte yapılarak patlayıcı bir güç elde edilebilir.",
+            "display" : "ATT",
+			"value" : 0 
+        },  
+        "ArP": {
+            "description" :"Armor Penetration Booster.\n\t•Zırh Delme Değerini artırır." , 
+			"detailedDescription" : "Armor Penetration Booster.\n\t•Armor Pen, rakip TGH değeri ile teste girer.\n\t•Armor Pen değeri, rakip TGH değerinden fazla ise mermiler XBT'yi delip geçer.\n\t•Armor Pen değeri, mermi hedef deldikçe azalır.",
+            "display" : "Armor Pen",
+			"value" : 0 
+        },  
+        "CAT": {
+            "description" :"CC (CrowdControl) Attack Booster.\n\t•Kitle Kontrol Saldırısını artırır." , 
+			"detailedDescription" : "CC (CrowdControl) Attack Booster.\n\t•CCATT, rakip CCDEF değeri ile teste girer.\n\t•CCATT değeri, rakip CCDEF değerinden fazla ise kitle kontrol süresi artar.",
+            "display" : "CC ATT",
+			"value" : 0 
+        },  
+        "RNG": {
+            "description" :"Range Booster.\n\t•Menzil artırır." , 
+			"detailedDescription" : "Range Booster.\n\t•Saldırı ve yetenek menzilini artırır.",
+            "display" : "RNG",
+			"value" : 0 
+        },  
+        "AoE": {
+            "description" :"Area of Effect Booster.\n\t•Saldırı Etki Alanını artırır." , 
+			"detailedDescription" : "Area of Effect Booster.\n\t•Alan etkisine sahip saldırı ve yeteneklerin etki yarıçapını artırır.",
+            "display" : "AoE",
+			"value" : 0 
+        }, 
+        "DHP": {
+            "description" :"Drone HP Booster.\n\t•Drone Can Değerini artırır." ,  
+			"detailedDescription" : "Drone HP Booster.\n\t•Tüm drone türlerinin maksimum can değerini artırır.",
+            "display" : "Drone HP",
+			"value" : 0 
+        }, 
+        "Reg": {
+            "description" :"Regeneration Booster.\n\t•Can Yenileme Değerini artırır." ,  
+			"detailedDescription" : "Regeneration Booster.\n\t•Belirtilen yüzde oranında can yenileme hızını artırır.",
+            "display" : "Regen",
+			"value" : 0 
+        }, 
+        "FCd": {
+            "description" :"Factory Cooldown Reducer.\n\t•Fabrika Bekleme Süresini azaltır." , 
+			"detailedDescription" : "Factory Cooldown Reducer.\n\t•Drone üretimi sonrasında, yeni üretim için devreye giren bekleme süresini kısaltır.\n\t•Bekleme süresi üretilen drone türüne göre değişiklik gösterir.",
+            "display" : "Factory Cd",
+			"value" : 0 
+        },  
+        "JCd": {
+            "description" :"Jump Cooldown Reducer.\n\t•Işınlanma Bekleme Süresini azaltır." ,  
+			"detailedDescription" : "Jump Cooldown Reducer.\n\t•Portal Drone'a ışınlanma sonrasında, tekrar ışınlanma için devreye giren bekleme süresini kısaltır.",
+            "display" : "Jump Cd",
+			"value" : 0 
+        }, 
+        "UCd": {
+            "description" :"Ulti Cooldown Reducer.\n\t•Ulti Bekleme Süresini azaltır." , 
+			"detailedDescription" : "Ulti Cooldown Reducer.\n\t•Ulti(R) yeteneği kullanımı sonrasında, yeniden kullanım için devreye giren bekleme süresini kısaltır.",
+            "display" : "Ulti Cd",
+			"value" : 0 
+        }, 
+        "FwS": {
+            "description" :"Forward Speed Booster.\n\t•İleri Hız Değerini artırır." , 
+			"detailedDescription" : "Forward Speed Booster.\n\t•XBT'nin ileri yöndeki hızını artırır.",
+            "display" : "Fwd Spd",
+			"value" : 0 
+        }, 
+        "RoS": {
+            "description" :"Rotation Speed Booster.\n\t•Dönme Hızını artırır." ,  
+			"detailedDescription" : "Rotation Speed Booster.\n\t•XBT'nin kendi etrafında dönme hızını artırır.",
+            "display" : "Rot Spd",
+			"value" : 0 
+        }, 
+        "Acl": {
+            "description" :"Acceleration Booster.\n\t•İvmelenme Değerini artırır." ,  
+			"detailedDescription" : "Acceleration Booster.\n\t•XBT'nin ivmesini artırarak daha hızlı kalkış yapmasını sağlar.",
+            "display" : "Acceleration",
+			"value" : 0 
+        }, 
+        "MvP": {
+            "description" :"Manuever Penalty Reducer.\n\t•Manevra Hız Penaltısı Değerini azaltır." ,  
+			"detailedDescription" : "Manuever Penalty Reducer.\n\t•XBT'nin manevralı hareketinde maruz kaldığı yavaşlatma cezasını azaltır.",
+            "display" : "Mvr Pen",
+			"value" : 0 
+        }, 
+        "XCP": {
+            "description" :"Cross Country Penalty Reducer.\n\t•Arazi Hız Penaltısı Değerini azaltır." ,  
+			"detailedDescription" : "Cross Country Penalty Reducer.\n\t•XBT'nin toprak arazideki hareketinde maruz kaldığı yavaşlatma cezasını azaltır.",
+            "display" : "XC Pen",
+			"value" : 0 
+        }, 
+        "RvS": {
+            "description" :"Reverse Speed Booster.\n\t•Geri Hız Değerini artırır." , 
+			"detailedDescription" : "Reverse Speed Booster.\n\t•XBT'nin geri yöndeki hızını artırır.",
+            "display" : "Rev Spd",
+			"value" : 0
+        }
+    }
+  }
+  

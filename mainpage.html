@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boş Sayfa</title>
+    <link href="https://fonts.cdnfonts.com/css/chasing-rabbits" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #171717;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        header {
+            padding: 5px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            color: #EDEDED;
+            font-family: 'Chasing Rabbits', sans-serif;
+            font-size: 48px;
+        }
+        header h2 {
+            margin: 0;
+            color: #EDEDED;
+            font-family: 'Chasing Rabbits', sans-serif;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        nav {
+            background-color: #444444;
+            height: 48px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 30px;
+            transform: translateY(-25%);
+        }
+        .logo-link {
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .logo {
+            height: 96px;
+            display: block;
+        }
+        .nav-links {
+            display: flex;
+            gap: 100px;
+        }
+        .nav-link {
+            color: #EDEDED;
+            text-decoration: none;
+            font-family: 'Chasing Rabbits', sans-serif;
+            font-size: 24px;
+        }
+        .nav-link:hover {
+            text-decoration: none;
+            color: #DA0037;
+        }
+        .content-area {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(100, 1fr);
+            grid-template-rows: repeat(100, 1fr);
+            gap: 4px;
+            padding: 4px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LUDEN GAMES</h1>
+        <h2>SSA WIKI</h2>
+    </header>
+    <nav>
+        <a href="mainpage.html" class="logo-link">
+            <img src="Luden_Logo.png" alt="Luden Games Logo" class="logo">
+        </a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">BUILDER</a>
+            <a href="https://www.youtube.com/@LudenGames" target="_blank" class="nav-link">YOUTUBE</a>
+        </div>
+    </nav>
+
+    <div class="content-area">
+        
+    </div>
+
+</body>
+</html>

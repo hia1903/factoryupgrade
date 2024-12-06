@@ -1,0 +1,167 @@
+{
+    "equipmentTable": {
+      "branches": [
+        {
+            "name": "Z",
+            "availableTextColor" : "#eb4c59",
+            "selectedBackgroundColor" : "#3e232b",
+            "branch": [
+                {
+                    "name" : "Fast Laner",
+                    "type" : "statBonus",
+                    "price": 250,
+                    "description" : "Gives Forward Speed and Acceleration to after Jump to Base for 8 seconds",
+                    "display" : "Fwd Spd & Acc for 8s",
+                    "elements": [
+                        { "stat": "FwS", "val": 8888},
+                        { "stat": "Acl", "val": 8888}
+                      ]
+                },
+                {
+                    "name" : "Airlocking",
+                    "type" : "statBonus",
+                    "price": 250,
+                    "description" : "Removes all MVR and XC penalties for 20 seconds",
+                    "display" : "Remove MVR & XCPen for 20s",
+                    "elements": [
+                        { "stat": "MVR", "val": 100},
+                        { "stat": "XCP", "val": 100}
+                      ]
+                },
+                {
+                    "name" : "Radar Kit",
+                    "type" : "utilityBonus",
+                    "price": 250,
+                    "description" : "See infrared invisible units in range of 22.4 for 3 seconds",
+                    "display" : "infrared sight for 3 seconds"
+                },
+                {
+                    "name" : "Repair Kit",
+                    "type" : "statBonus",
+                    "price": 250,
+                    "description" : "Gives %600 regen for 10 seconds",
+                    "display" : "%600 Reg for 20s",
+                    "elements": [
+                        { "stat": "Reg", "val": 600}
+                      ]
+                },
+                {
+                    "name" : "Jungle Kit",
+                    "type" : "utilityBonus",
+                    "price": 150,
+                    "description" : "Gives %20 Damage Reduction against jungle units ",
+                    "display" : "%20 DRED against jungle units"
+                }
+            ]
+        },
+        {
+            "name": "C",
+            "availableTextColor" : "#77dfe7",
+            "selectedBackgroundColor" : "#10262f",
+            "branch": [
+                {
+                    "name" : "Seismic Sensor",
+                    "type" : "statBonus",
+                    "price": "NaN",
+                    "description" : "Informs if any building collapsed (Infrared Sight %20)",
+                    "display" : "Informs "
+                },
+                {
+                    "name" : "Shield",
+                    "type" : "statBonus",
+                    "price": 2250,
+                    "description" : "Equalizes all defenses to front defense for 30 seconds (DEF %40)",
+                    "display" : "Equalizes all defens for 30s",
+                    "elements": [
+                        { "stat": "DEF", "val": 40}
+                      ]
+                },
+                {
+                    "name" : "Stealth Fighter",
+                    "type" : "statBonus",
+                    "price": 2500,
+                    "description" : "Become optically invisible for 10 seconds (Cloaked Inv. %100, Regen %20)",
+                    "display" : "",
+                    "elements": [
+                        { "stat": "Reg", "val": 20}
+                      ]
+                },
+                {
+                    "name" : "Stun Immunity",
+                    "type" : "statBonus",
+                    "price": 2500,
+                    "description" : "Gives stun immunity for 30 seconds (CCDEF %40)",
+                    "display" : "",
+                    "elements": [
+                        { "stat": "CDF", "val": 40}
+                      ]
+                },
+                {
+                    "name" : "Xalium Stealer",
+                    "type" : "utilityBonus",
+                    "price": 3000,
+                    "description" : "Heal after damage dealt to enemy (ATT %40)",
+                    "display" : "",
+                    "elements": [
+                        { "stat": "ATT", "val": 40}
+                      ]
+                }
+            ]
+        },
+        {
+            "name": "X",
+            "availableTextColor" : "#fadf78",
+            "selectedBackgroundColor" : "#716322",
+            "branch": [
+                {
+                    "name" : "Cold Blood",
+                    "type" : "statBonus",
+                    "price": 1000,
+                    "description" : "Gain %20 ATT after killing an XBT for 60 seconds",
+                    "display" : ""
+                },
+                {
+                    "name" : "Teleporter",
+                    "type" : "statBonus",
+                    "price": 3000,
+                    "description" : "Teleports instantly in range of 25.6 (Jump Cooldown -%10)",
+                    "display" : "",
+                    "elements": [
+                        { "stat": "JCd", "val": 10}
+                      ]
+                },
+                {
+                    "name" : "Power Jumper",
+                    "type" : "statBonus",
+                    "price": "NaN",
+                    "description" : "Teleport to any ally's portal (TGH %10)",
+                    "display" : "",
+                    "elements": [
+                        { "stat": "TGH", "val": 10}
+                      ]
+                },
+                {
+                    "name" : "Engine Stop",
+                    "type" : "statBonus",
+                    "price": 2000,
+                    "description" : "Stops engines of XBTs in range of 19.6 for 1 second (CCATT %20)",
+                    "display" : "",
+                    "elements": [
+                        { "stat": "CAT", "val": 20}
+                      ]
+                },
+                {
+                    "name" : "Counter Fire",
+                    "type" : "statBonus",
+                    "price": 1500,
+                    "description" : "Reflects damage blocked with DEF for 30 seconds (DEF %20)",
+                    "display" : "",
+                    "elements": [
+                        { "stat": "DEF", "val": 20}
+                      ]
+                }
+            ]
+        }
+      ]
+    }
+  }

@@ -1,0 +1,288 @@
+{
+  "upgradeTable": {
+    "branches": [
+      {
+        "name": "Penetrator",
+        "availableTextColor" : "#77dfe7",
+        "selectedBackgroundColor" : "#10262f",
+        "disableTextColor" : "#3c7f89",
+        "branch": [
+          {
+            "name" : "Tracks", 
+            "price": 1350,
+            "elements": [
+              { "stat": "HP", "val": 30}
+            ]
+          },
+          {
+              "name" : "X-Bone",
+              "price": 1500,
+              "elements": [
+                { "stat": "DEF", "val": 40},
+                { "stat": "TGH", "val": 40}
+              ]
+          },
+          {
+              "name" : "Muzzle Upgrade",
+              "price": 2600,
+              "elements": [
+                { "stat": "ArP", "val": 30},
+                { "stat": "RNG", "val": 5},
+                { "stat": "DMG", "val": 20}
+              ]
+          }, 
+          {
+              "name" : "Gyrogun",
+              "price": 5650,
+              "elements": [
+                { "stat": "DMG", "val": 65},
+                { "stat": "ArP", "val": 30}
+              ]
+          }
+        ]
+      },
+      {
+        "name": "Hunter",
+        "availableTextColor" : "#fadf78",
+        "selectedBackgroundColor" : "#716322",
+        "disableTextColor" : "#b9a656",
+          "branch": [
+            {
+              "name" : "Xalium Turbine",
+                "price": 1750,
+                "elements": [
+                  { "stat": "RoS", "val": 10},
+                  { "stat": "FwS", "val": 4},
+                  { "stat": "RvS", "val": 4}
+                ]
+            },
+            {
+              "name" : "Drone Amor",
+                  "price": 2300,
+                  "elements": [
+                    { "stat": "DHP", "val": 80},
+                    { "stat": "DMG", "val": 20}
+                  ]
+            },
+            {
+              "name" : "Liquid Shells",
+                  "price": 2050,
+                  "elements": [
+                    { "stat": "ATT", "val": 80}
+                  ]
+            }, 
+            {
+              "name" : "Warhead",
+                  "price": 5000,
+                  "elements": [
+                    { "stat": "DMG", "val": 65}
+                  ]
+            }
+          ]
+      },
+      {
+        "name": "Bomber",
+        "availableTextColor" : "#f78b4c",
+        "selectedBackgroundColor" : "#5a321e",
+        "disableTextColor" : "#a85e35",
+          "branch": [
+            {
+              "name" : "Firecontrol Unit",
+                "price": 250,
+                "elements": [
+                  { "stat": "DMG", "val": 10}
+                ]
+            },
+            {
+              "name" : "Magaccelerator",
+                  "price": 1700,
+                  "elements": [
+                    { "stat": "ATT", "val": 40},
+                    { "stat": "DMG", "val": 25}
+                  ]
+            },
+            {
+              "name" : "Fin Stabilizer",
+                  "price": 2600,
+                  "elements": [
+                    { "stat": "RNG", "val": 5},
+                    { "stat": "DMG", "val": 30}
+                  ]
+            }, 
+            {
+              "name" : "Oil Tech",
+                  "price": 5700,
+                  "elements": [
+                    { "stat": "AoE", "val": 15},
+                    { "stat": "DMG", "val": 50}
+                  ]
+            }
+          ]
+      },
+      {
+        "name": "Fast Attacker",
+        "availableTextColor" : "#eb4c59",
+        "selectedBackgroundColor" : "#3e232b",
+        "disableTextColor" : "#8a343c",
+          "branch": [
+            {
+              "name" : "Cyberkit",
+                "price": 900,
+                "elements": [
+                  { "stat": "Reg", "val": 10},
+                  { "stat": "HP", "val": 15}
+                ]
+            },
+            {
+              "name" : "Ulti Container",
+                  "price": 1200,
+                  "elements": [
+                    { "stat": "UCd", "val": 10},
+                    { "stat": "HP", "val": 20}
+                  ]
+            },
+            {
+              "name" : "Fin Stabilizer",
+                  "price": 1600,
+                  "elements": [
+                    { "stat": "XCP", "val": 25},
+                    { "stat": "MvP", "val": 25}
+                  ]
+            }, 
+            {
+              "name" : "Hyper Cooling",
+                  "price": 2800,
+                  "elements": [
+                    { "stat": "FwS", "val": 10},
+                    { "stat": "DMG", "val": 30},
+                    { "stat": "UCd", "val": 10}
+                  ]
+            }
+          ]
+      },
+      {
+        "name": "Jammer",
+        "availableTextColor" : "#ededed",
+        "selectedBackgroundColor" : "#4d4d4d",
+        "disableTextColor" : "#9d9d9d",
+          "branch": [
+            {
+              "name" : "Under Carriage",
+                "price": 1250,
+                "elements": [
+                  { "stat": "MvP", "val": 25},
+                  { "stat": "DMG", "val": 15}
+                ]
+            },
+            {
+              "name" : "Ceramic Plates",
+                  "price": 1350,
+                  "elements": [
+                    { "stat": "HP", "val": 15},
+                    { "stat": "CAT", "val": 40}
+                  ]
+            },
+            {
+              "name" : "Power Jumper",
+                  "price": 1250,
+                  "elements": [
+                    { "stat": "JCd", "val": 20},
+                    { "stat": "DMG", "val": 20}
+                  ]
+            }, 
+            {
+              "name" : "Geist Shell",
+                  "price": 4150,
+                  "elements": [
+                    { "stat": "DMG", "val": 40},
+                    { "stat": "CAT", "val": 80}
+                  ]
+            }
+          ]
+      },
+      {
+        "name": "Defender",
+        "availableTextColor" : "#bdef77",
+        "selectedBackgroundColor" : "#365029",
+        "disableTextColor" : "#769e4b",
+          "branch": [
+            {
+              "name" : "Repair System",
+                "price": 1150,
+                "elements": [
+                  { "stat": "Reg", "val": 10},
+                  { "stat": "HP", "val": 15},
+                  { "stat": "DMG", "val": 10}
+                ]
+            },
+            {
+              "name" : "Supercharger",
+                  "price": 1600,
+                  "elements": [
+                    { "stat": "Acl", "val": 10},
+                    { "stat": "HP", "val": 15},
+                    { "stat": "DMG", "val": 10}
+                  ]
+            },
+            {
+              "name" : "Super Conductor",
+                  "price": 1050,
+                  "elements": [
+                    { "stat": "FCd", "val": 50},
+                    { "stat": "DMG", "val": 10}
+                  ]
+            }, 
+            {
+              "name" : "Megaron Armor",
+                  "price": 3450,
+                  "elements": [
+                    { "stat": "HP", "val": 20},
+                    { "stat": "DMG", "val": 20},
+                    { "stat": "DEF", "val": 80}
+                  ]
+            }
+          ]
+      },
+      {
+        "name": "Anti-Jammer",
+        "availableTextColor" : "#f39dee",
+        "selectedBackgroundColor" : "#4c254d",
+        "disableTextColor" : "#a0619e",
+          "branch": [
+            {
+              "name" : "X-Powder",
+                "price": 450,
+                "elements": [
+                  { "stat": "DMG", "val": 15}
+                ]
+            },
+            {
+              "name" : "Advanced Defkit",
+                  "price": 1750,
+                  "elements": [
+                    { "stat": "CDF", "val": 40},
+                    { "stat": "HP", "val": 15},
+                    { "stat": "DMG", "val": 15}
+                  ]
+            },
+            {
+              "name" : "Diferantiel",
+                  "price": 2100,
+                  "elements": [
+                    { "stat": "XCP", "val": 25},
+                    { "stat": "DMG", "val": 30}
+                  ]
+            }, 
+            {
+              "name" : "Revised Hull",
+                  "price": 3400,
+                  "elements": [
+                    { "stat": "HP", "val": 30},
+                    { "stat": "CDF", "val": 80}
+                  ]
+            }
+          ]
+      }
+    ]
+  }
+}
